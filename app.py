@@ -8,6 +8,7 @@ from nltk.corpus import stopwords
 
 # Descargas NLTK
 nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab')
 nltk.download('wordnet', quiet=True)
 nltk.download('stopwords', quiet=True)
 nltk.download('omw-1.4', quiet=True)
