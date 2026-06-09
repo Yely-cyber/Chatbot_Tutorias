@@ -61,6 +61,7 @@ footer {visibility: hidden;}
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .top-bar a {
@@ -88,6 +89,7 @@ footer {visibility: hidden;}
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
 }
 
 .logo-area {
@@ -117,6 +119,7 @@ footer {visibility: hidden;}
 .nav-bar {
     background: #004d99;
     padding: 0 120px;
+    overflow-x: auto;
 }
 
 .nav-bar ul {
@@ -133,7 +136,7 @@ footer {visibility: hidden;}
     font-weight: 500;
     font-size: 14px;
     cursor: pointer;
-    position: relative;
+    white-space: nowrap;
 }
 
 .nav-bar li:hover {
@@ -149,6 +152,7 @@ footer {visibility: hidden;}
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .slider-text h2 {
@@ -183,7 +187,7 @@ footer {visibility: hidden;}
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -241,7 +245,7 @@ footer {visibility: hidden;}
 
 .links-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
 }
 
@@ -278,7 +282,7 @@ footer {visibility: hidden;}
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     margin-bottom: 30px;
 }
@@ -305,14 +309,14 @@ footer {visibility: hidden;}
 }
 
 /* === CHATBOT BUTTON FLOTANTE === */
-.chatbot-btn-container {
+.floating-chat-btn {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 1000;
+    z-index: 9999;
 }
 
-.chatbot-btn {
+.floating-chat-btn button {
     background: linear-gradient(135deg, #003366 0%, #004d99 100%);
     border: none;
     border-radius: 50px;
@@ -329,14 +333,14 @@ footer {visibility: hidden;}
     gap: 10px;
 }
 
-.chatbot-btn:hover {
+.floating-chat-btn button:hover {
     transform: scale(1.05);
     background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
 }
 
 /* === ESTILOS DEL CHAT === */
 .chat-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     min-height: 100vh;
@@ -366,8 +370,7 @@ footer {visibility: hidden;}
 }
 
 .bubble-bot {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
+    background: #f0f2f5;
     border-radius: 16px 16px 16px 4px;
     padding: 12px 16px;
     font-size: 14px;
@@ -416,7 +419,11 @@ footer {visibility: hidden;}
     margin-top: 2px;
 }
 
-.back-btn {
+.back-btn-container {
+    margin-bottom: 20px;
+}
+
+.back-btn-container button {
     background: #003366;
     color: white;
     border: none;
@@ -424,10 +431,9 @@ footer {visibility: hidden;}
     padding: 10px 20px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 20px;
 }
 
-.back-btn:hover {
+.back-btn-container button:hover {
     background: #004d99;
 }
 
@@ -436,29 +442,20 @@ footer {visibility: hidden;}
     background: #f5f7fa;
 }
 
-.sidebar-title {
-    font-size: 12px;
-    color: #5F5E5A;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-div.stButton > button {
-    background: #E1F5EE;
-    color: #003366;
-    border: 1px solid #004d99;
-    border-radius: 20px;
-    font-size: 12px;
-    padding: 4px 14px;
-    font-family: 'Poppins', sans-serif;
-}
-
-div.stButton > button:hover {
-    background: #004d99;
-    color: white;
-    border-color: #003366;
+/* Responsive */
+@media (max-width: 768px) {
+    .top-bar, .main-header, .nav-bar, .slider, .news-section, .quick-links, .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .slider-text h2 {
+        font-size: 24px;
+    }
+    
+    .slider-image {
+        font-size: 50px;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -725,10 +722,10 @@ def mostrar_chat():
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
     
     # Botón para volver a la página principal
-    col1, col2, col3 = st.columns([1, 4, 1])
+    col1, col2 = st.columns([1, 5])
     with col1:
-        if st.button("← Volver al inicio", key="back_btn", use_container_width=True):
-            st.session_state.pagina_actual = "principal"
+        if st.button("← Volver", key="back_btn"):
+            st.session_state.pagina = "principal"
             st.rerun()
     
     # Header del chat
@@ -746,7 +743,6 @@ def mostrar_chat():
     with st.sidebar:
         st.markdown("### 🎓 Asistente de Tutorías UNSAAC")
         st.markdown("---")
-        st.markdown('<div class="sidebar-title">Consultas frecuentes</div>', unsafe_allow_html=True)
         
         temas = {
             "🎓 Tutoría": "¿Qué es la tutoría académica?",
@@ -785,22 +781,15 @@ def mostrar_chat():
     sent_tokens = cargar_corpus()
     
     # Mostrar historial
-    chat_html = ""
     for msg in st.session_state.mensajes:
         if msg["rol"] == "bot":
-            chat_html += f"""
-            <div class="row-bot">
-                <div class="avatar-bot">🤖</div>
-                <div class="bubble-bot">{msg["texto"]}</div>
-            </div>
-            """
+            col1, col2 = st.columns([1, 10])
+            with col1:
+                st.markdown("🤖")
+            with col2:
+                st.markdown(f'<div class="bubble-bot">{msg["texto"]}</div>', unsafe_allow_html=True)
         else:
-            chat_html += f"""
-            <div class="row-user">
-                <div class="bubble-user">{msg["texto"]}</div>
-            </div>
-            """
-    st.markdown(chat_html, unsafe_allow_html=True)
+            st.markdown(f'<div class="row-user"><div class="bubble-user">{msg["texto"]}</div></div>', unsafe_allow_html=True)
     
     # Preguntas sugeridas
     if len(st.session_state.mensajes) <= 1:
@@ -833,61 +822,53 @@ def mostrar_chat():
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────────────────────
-# CONTROL DE NAVEGACIÓN PRINCIPAL
+# CONTROL PRINCIPAL
 # ─────────────────────────────────────────────────────────────
-# Inicializar estado de página
-if "pagina_actual" not in st.session_state:
-    st.session_state.pagina_actual = "principal"
+# Inicializar estado
+if "pagina" not in st.session_state:
+    st.session_state.pagina = "principal"
 
-# Mostrar la página correspondiente
-if st.session_state.pagina_actual == "chat":
+# Mostrar la página según el estado
+if st.session_state.pagina == "chat":
     mostrar_chat()
 else:
     mostrar_pagina_principal()
-
-# Botón flotante de chatbot (solo visible en la página principal)
-if st.session_state.pagina_actual == "principal":
-    st.markdown("""
-    <div class="chatbot-btn-container">
-        <div class="chatbot-btn" onclick="parent.document.querySelector('button[data-testid=\"baseButton-secondary\"]').click()">
-            💬 Asistente Virtual
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
     
-    # Botón oculto para capturar el clic
-    if st.button("", key="abrir_chat", help="Abrir chatbot", use_container_width=False):
-        st.session_state.pagina_actual = "chat"
-        st.rerun()
+    # Botón flotante en la página principal usando columnas
+    with st.container():
+        col1, col2, col3 = st.columns([10, 1, 1])
+        with col3:
+            if st.button("💬 Asistente Virtual", key="floating_chat"):
+                st.session_state.pagina = "chat"
+                st.rerun()
     
-    # CSS para ocultar el botón real y mostrar el estilo flotante
+    # CSS para posicionar el botón
     st.markdown("""
     <style>
-    button[data-testid="baseButton-secondary"][kind="secondary"] {
+    div[data-testid="column"]:nth-child(3) {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        z-index: 1000;
+        width: auto !important;
+        z-index: 9999;
+    }
+    button[key="floating_chat"] {
         background: linear-gradient(135deg, #003366 0%, #004d99 100%);
         border: none;
         border-radius: 50px;
         padding: 15px 25px;
         color: white;
+        font-family: 'Poppins', sans-serif;
         font-weight: 600;
         font-size: 16px;
+        cursor: pointer;
         box-shadow: 0 5px 20px rgba(0,51,102,0.4);
         transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        white-space: nowrap;
     }
-    button[data-testid="baseButton-secondary"][kind="secondary"]:hover {
+    button[key="floating_chat"]:hover {
         transform: scale(1.05);
         background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
-    }
-    button[data-testid="baseButton-secondary"][kind="secondary"]::before {
-        content: "💬";
-        margin-right: 8px;
     }
     </style>
     """, unsafe_allow_html=True)
