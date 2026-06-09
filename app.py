@@ -39,12 +39,14 @@ html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Ocultar el header y footer de Streamlit */
+/* Ocultar elementos de Streamlit */
 header[data-testid="stHeader"] {
     background: #003366;
 }
 
-/* Main container */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+
 .main .block-container {
     padding: 0;
     max-width: 100%;
@@ -109,29 +111,6 @@ header[data-testid="stHeader"] {
     color: #666;
     font-size: 11px;
     margin: 0;
-}
-
-.search-area {
-    display: flex;
-    gap: 10px;
-}
-
-.search-area input {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    width: 250px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.search-area button {
-    background: #003366;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
 }
 
 /* === NAVEGACIÓN === */
@@ -326,14 +305,14 @@ header[data-testid="stHeader"] {
 }
 
 /* === CHATBOT BUTTON FLOTANTE === */
-.chatbot-btn {
+.chatbot-btn-container {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
 }
 
-.chatbot-btn button {
+.chatbot-btn {
     background: linear-gradient(135deg, #003366 0%, #004d99 100%);
     border: none;
     border-radius: 50px;
@@ -350,16 +329,17 @@ header[data-testid="stHeader"] {
     gap: 10px;
 }
 
-.chatbot-btn button:hover {
+.chatbot-btn:hover {
     transform: scale(1.05);
     background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
 }
 
-/* === ESTILOS DEL CHAT (para cuando se muestre) === */
+/* === ESTILOS DEL CHAT === */
 .chat-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .header-box {
@@ -450,6 +430,36 @@ header[data-testid="stHeader"] {
 .back-btn:hover {
     background: #004d99;
 }
+
+/* Sidebar del chat */
+[data-testid="stSidebar"] {
+    background: #f5f7fa;
+}
+
+.sidebar-title {
+    font-size: 12px;
+    color: #5F5E5A;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+div.stButton > button {
+    background: #E1F5EE;
+    color: #003366;
+    border: 1px solid #004d99;
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 4px 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+div.stButton > button:hover {
+    background: #004d99;
+    color: white;
+    border-color: #003366;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -463,7 +473,6 @@ def cargar_corpus():
             raw = f.read().lower()
         return nltk.sent_tokenize(raw)
     except FileNotFoundError:
-        # Si no existe el archivo, crear un corpus básico
         corpus_basico = """
         La tutoría académica es un proceso de acompañamiento personalizado.
         El tutor ayuda al estudiante en su desarrollo académico y personal.
@@ -576,10 +585,6 @@ def mostrar_pagina_principal():
                 <h1>UNSAAC</h1>
                 <p>Universidad Nacional de San Antonio Abad del Cusco</p>
             </div>
-        </div>
-        <div class="search-area">
-            <input type="text" placeholder="Buscar...">
-            <button>🔍 Buscar</button>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -720,9 +725,11 @@ def mostrar_chat():
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
     
     # Botón para volver a la página principal
-    if st.button("← Volver al inicio", key="back_btn", help="Regresar a la página principal"):
-        st.session_state.mostrar_chat = False
-        st.rerun()
+    col1, col2, col3 = st.columns([1, 4, 1])
+    with col1:
+        if st.button("← Volver al inicio", key="back_btn", use_container_width=True):
+            st.session_state.pagina_actual = "principal"
+            st.rerun()
     
     # Header del chat
     st.markdown("""
@@ -739,6 +746,8 @@ def mostrar_chat():
     with st.sidebar:
         st.markdown("### 🎓 Asistente de Tutorías UNSAAC")
         st.markdown("---")
+        st.markdown('<div class="sidebar-title">Consultas frecuentes</div>', unsafe_allow_html=True)
+        
         temas = {
             "🎓 Tutoría": "¿Qué es la tutoría académica?",
             "👨‍🏫 Tutor": "¿Cuáles son las funciones del tutor académico?",
@@ -748,14 +757,17 @@ def mostrar_chat():
             "📝 Matrícula": "¿Cómo se realiza la matrícula?",
             "💼 Perfil profesional": "¿Cómo elaborar un currículum vitae?"
         }
+        
         for label, pregunta in temas.items():
             if st.button(label, key=f"sidebar_{label}", use_container_width=True):
                 st.session_state.pregunta_rapida = pregunta
+        
         st.markdown("---")
         if st.button("🗑️ Limpiar conversación", use_container_width=True):
             st.session_state.mensajes = []
             st.session_state.pregunta_rapida = ""
             st.rerun()
+        
         st.markdown("---")
         st.caption("Powered by TF-IDF · NLTK")
     
@@ -792,7 +804,7 @@ def mostrar_chat():
     
     # Preguntas sugeridas
     if len(st.session_state.mensajes) <= 1:
-        st.markdown("**Preguntas sugeridas:**")
+        st.markdown("**💡 Preguntas sugeridas:**")
         sugerencias = [
             "¿Qué es la tutoría académica?",
             "¿Qué es la matrícula condicionada?",
@@ -823,28 +835,59 @@ def mostrar_chat():
 # ─────────────────────────────────────────────────────────────
 # CONTROL DE NAVEGACIÓN PRINCIPAL
 # ─────────────────────────────────────────────────────────────
-if "mostrar_chat" not in st.session_state:
-    st.session_state.mostrar_chat = False
+# Inicializar estado de página
+if "pagina_actual" not in st.session_state:
+    st.session_state.pagina_actual = "principal"
 
-# Mostrar página principal o el chat
-if st.session_state.mostrar_chat:
+# Mostrar la página correspondiente
+if st.session_state.pagina_actual == "chat":
     mostrar_chat()
 else:
     mostrar_pagina_principal()
 
-# Botón flotante de chatbot (visible en ambas vistas pero solo funcional desde la página principal)
-st.markdown("""
-<div class="chatbot-btn">
-    <button onclick="window.location.href='?chat=open'">
-        💬 Asistente Virtual
-    </button>
-</div>
-""", unsafe_allow_html=True)
-
-# Manejo del clic en el botón mediante parámetro de URL
-import sys
-query_params = st.query_params
-if query_params.get("chat") == ["open"]:
-    st.session_state.mostrar_chat = True
-    st.query_params.clear()
-    st.rerun()
+# Botón flotante de chatbot (solo visible en la página principal)
+if st.session_state.pagina_actual == "principal":
+    st.markdown("""
+    <div class="chatbot-btn-container">
+        <div class="chatbot-btn" onclick="parent.document.querySelector('button[data-testid=\"baseButton-secondary\"]').click()">
+            💬 Asistente Virtual
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Botón oculto para capturar el clic
+    if st.button("", key="abrir_chat", help="Abrir chatbot", use_container_width=False):
+        st.session_state.pagina_actual = "chat"
+        st.rerun()
+    
+    # CSS para ocultar el botón real y mostrar el estilo flotante
+    st.markdown("""
+    <style>
+    button[data-testid="baseButton-secondary"][kind="secondary"] {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 15px 25px;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 5px 20px rgba(0,51,102,0.4);
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    button[data-testid="baseButton-secondary"][kind="secondary"]:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
+    }
+    button[data-testid="baseButton-secondary"][kind="secondary"]::before {
+        content: "💬";
+        margin-right: 8px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
