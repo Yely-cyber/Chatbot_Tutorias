@@ -17,13 +17,14 @@ nltk.download('omw-1.4', quiet=True)
 # CONFIGURACIÓN DE LA PÁGINA
 # ─────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Escuela Profesional de Ingeniería Informática y de Sistemas - UNSAAC",
+    page_title="Escuela Profesional de Ingeniería Informática y Sistemas - UNSAAC",
     page_icon="💻",
     layout="wide"
 )
 
 # ─────────────────────────────────────────────────────────────
 # CSS PERSONALIZADO - Estilo Escuela de Ingeniería Informática
+# Paleta de colores: Rojo institucional (#8B0000, #A52A2A) + Dorado (#DAA520, #FFD700)
 # ─────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
@@ -41,7 +42,7 @@ html, body, [class*="css"] {
 
 /* Ocultar elementos de Streamlit */
 header[data-testid="stHeader"] {
-    background: #1a2a6c;
+    background: #8B0000;
 }
 
 #MainMenu {visibility: hidden;}
@@ -54,8 +55,8 @@ footer {visibility: hidden;}
 
 /* === BARRA SUPERIOR === */
 .top-bar {
-    background: #0f1b4f;
-    color: #e0e0e0;
+    background: #6B0000;
+    color: #f5f5f5;
     padding: 8px 120px;
     font-size: 12px;
     display: flex;
@@ -65,7 +66,7 @@ footer {visibility: hidden;}
 }
 
 .top-bar a {
-    color: #e0e0e0;
+    color: #FFD700;
     text-decoration: none;
     margin-left: 20px;
     font-size: 12px;
@@ -73,7 +74,8 @@ footer {visibility: hidden;}
 }
 
 .top-bar a:hover {
-    color: #ff8c00;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .top-bar-left {
@@ -88,7 +90,7 @@ footer {visibility: hidden;}
 
 /* === HEADER PRINCIPAL === */
 .main-header {
-    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 50%, #1a2a6c 100%);
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 50%, #8B0000 100%);
     padding: 20px 120px;
     display: flex;
     justify-content: space-between;
@@ -108,33 +110,34 @@ footer {visibility: hidden;}
 }
 
 .logo-text h1 {
-    color: white;
+    color: #FFD700;
     font-size: 24px;
     font-weight: 700;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .logo-text h1 span {
-    color: #ff8c00;
+    color: white;
 }
 
 .logo-text p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.85);
     font-size: 11px;
     margin: 5px 0 0;
 }
 
 /* Botón del Chatbot en el Header */
 .chatbot-header-btn {
-    background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+    background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
     border: none;
     border-radius: 40px;
     padding: 12px 28px;
-    color: white;
+    color: #8B0000;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s;
@@ -146,16 +149,17 @@ footer {visibility: hidden;}
 
 .chatbot-header-btn:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #ff6b00 0%, #e55a00 100%);
+    background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    color: #6B0000;
 }
 
 /* === NAVEGACIÓN === */
 .nav-bar {
-    background: #0f1b4f;
+    background: #7A0000;
     padding: 0 120px;
     overflow-x: auto;
-    border-bottom: 3px solid #ff8c00;
+    border-bottom: 3px solid #FFD700;
 }
 
 .nav-bar ul {
@@ -178,14 +182,14 @@ footer {visibility: hidden;}
 }
 
 .nav-bar li:hover {
-    color: #ff8c00;
-    border-bottom: 2px solid #ff8c00;
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
     margin-bottom: -2px;
 }
 
 /* === SLIDER / BANNER === */
 .slider {
-    background: linear-gradient(135deg, #e8f0ff 0%, #d4e2fc 100%);
+    background: linear-gradient(135deg, #FFF8E7 0%, #FFF3D6 100%);
     padding: 50px 120px;
     display: flex;
     justify-content: space-between;
@@ -194,7 +198,7 @@ footer {visibility: hidden;}
 }
 
 .slider-text h2 {
-    color: #1a2a6c;
+    color: #8B0000;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 15px;
@@ -202,7 +206,7 @@ footer {visibility: hidden;}
 }
 
 .slider-text p {
-    color: #444;
+    color: #555;
     font-size: 16px;
     opacity: 0.9;
 }
@@ -214,15 +218,15 @@ footer {visibility: hidden;}
 /* === SECCIÓN DE INFORMACIÓN === */
 .info-section {
     padding: 50px 120px;
-    background: #f8f9fc;
+    background: #FAFAFA;
 }
 
 .section-title {
-    color: #1a2a6c;
+    color: #8B0000;
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 30px;
-    border-left: 5px solid #ff8c00;
+    border-left: 5px solid #DAA520;
     padding-left: 20px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -241,6 +245,7 @@ footer {visibility: hidden;}
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     padding: 30px 20px;
+    border-top: 4px solid #DAA520;
 }
 
 .info-card:hover {
@@ -254,7 +259,7 @@ footer {visibility: hidden;}
 }
 
 .info-title {
-    color: #1a2a6c;
+    color: #8B0000;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -279,7 +284,7 @@ footer {visibility: hidden;}
 }
 
 .news-card {
-    background: #f8f9fc;
+    background: #FAFAFA;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0,0,0,0.05);
@@ -291,13 +296,13 @@ footer {visibility: hidden;}
 }
 
 .news-img {
-    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
     height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 55px;
-    color: white;
+    color: #FFD700;
 }
 
 .news-content {
@@ -305,14 +310,14 @@ footer {visibility: hidden;}
 }
 
 .news-date {
-    color: #ff8c00;
+    color: #DAA520;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
 .news-title {
-    color: #1a2a6c;
+    color: #8B0000;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -326,8 +331,8 @@ footer {visibility: hidden;}
 
 /* === FOOTER === */
 .footer {
-    background: #0a0f2a;
-    color: #aaa;
+    background: #4A0000;
+    color: #ccc;
     padding: 50px 120px 25px;
 }
 
@@ -339,14 +344,14 @@ footer {visibility: hidden;}
 }
 
 .footer-col h4 {
-    color: white;
+    color: #FFD700;
     font-size: 16px;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
 .footer-col p, .footer-col a {
-    color: #aaa;
+    color: #ccc;
     font-size: 12px;
     line-height: 1.8;
     text-decoration: none;
@@ -355,13 +360,13 @@ footer {visibility: hidden;}
 }
 
 .footer-col a:hover {
-    color: #ff8c00;
+    color: #FFD700;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #1a2a6c;
+    border-top: 1px solid #7A0000;
     font-size: 11px;
 }
 
@@ -371,22 +376,22 @@ footer {visibility: hidden;}
     margin: 0 auto;
     padding: 20px;
     min-height: 100vh;
-    background: #f8f9fc;
+    background: #FAFAFA;
 }
 
 .header-box {
-    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
     border-radius: 20px;
     padding: 20px 28px;
     display: flex;
     align-items: center;
     gap: 18px;
     margin-bottom: 25px;
-    box-shadow: 0 8px 25px rgba(26,42,108,0.2);
+    box-shadow: 0 8px 25px rgba(139,0,0,0.2);
 }
 
 .header-title {
-    color: white;
+    color: #FFD700;
     font-size: 22px;
     font-weight: 700;
     margin: 0;
@@ -394,7 +399,7 @@ footer {visibility: hidden;}
 }
 
 .header-sub {
-    color: #ff8c00;
+    color: rgba(255,255,255,0.85);
     font-size: 13px;
     margin: 6px 0 0;
 }
@@ -409,10 +414,11 @@ footer {visibility: hidden;}
     margin-bottom: 6px;
     line-height: 1.6;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 3px solid #DAA520;
 }
 
 .bubble-user {
-    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
     border-radius: 18px 18px 6px 18px;
     padding: 14px 18px;
     font-size: 14px;
@@ -440,8 +446,8 @@ footer {visibility: hidden;}
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
-    color: white;
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+    color: #FFD700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -456,8 +462,8 @@ footer {visibility: hidden;}
 }
 
 .back-btn-container button {
-    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
-    color: white;
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+    color: #FFD700;
     border: none;
     border-radius: 30px;
     padding: 10px 25px;
@@ -468,25 +474,25 @@ footer {visibility: hidden;}
 }
 
 .back-btn-container button:hover {
-    background: linear-gradient(135deg, #2a3f8f 0%, #1a2a6c 100%);
+    background: linear-gradient(135deg, #A52A2A 0%, #8B0000 100%);
     transform: translateX(-3px);
 }
 
 /* Estilo del input del chat */
 .stChatInputContainer > div {
     border-radius: 30px !important;
-    border: 2px solid #e0e0e0 !important;
+    border: 2px solid #E8E8E8 !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
 }
 
 .stChatInputContainer > div:focus-within {
-    border-color: #ff8c00 !important;
-    box-shadow: 0 2px 15px rgba(255,140,0,0.1) !important;
+    border-color: #DAA520 !important;
+    box-shadow: 0 2px 15px rgba(218,165,32,0.1) !important;
 }
 
 /* Sidebar del chat */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%);
+    background: linear-gradient(180deg, #FAFAFA 0%, #F0F0F0 100%);
 }
 
 [data-testid="stSidebar"] button {
@@ -495,15 +501,15 @@ footer {visibility: hidden;}
 }
 
 [data-testid="stSidebar"] button:hover {
-    background: #ff8c00 !important;
-    color: white !important;
+    background: #8B0000 !important;
+    color: #FFD700 !important;
     transform: translateX(5px);
 }
 
 /* Botones de sugerencias */
 .suggestion-btn {
     background: white !important;
-    border: 1px solid #e0e0e0 !important;
+    border: 1px solid #E0E0E0 !important;
     border-radius: 25px !important;
     padding: 8px 16px !important;
     font-size: 12px !important;
@@ -511,9 +517,9 @@ footer {visibility: hidden;}
 }
 
 .suggestion-btn:hover {
-    background: #ff8c00 !important;
-    border-color: #ff8c00 !important;
-    color: white !important;
+    background: #DAA520 !important;
+    border-color: #DAA520 !important;
+    color: #8B0000 !important;
 }
 
 /* Responsive */
@@ -588,9 +594,9 @@ SALUDOS_IN = (
 
 SALUDOS_OUT = [
     "¡Hola! ¿En qué puedo ayudarte?",
-    "¡Hola! Soy el asistente de Tutorías UNSAAC.",
+    "¡Hola! Soy el asistente de la Escuela de Ingeniería Informática.",
     "¡Bienvenido! Estoy aquí para ayudarte con información académica.",
-    "¡Buenas! Puedes consultarme sobre tutorías, bienestar universitario y técnicas de estudio."
+    "¡Buenas! Puedes consultarme sobre la carrera, cursos, horarios y más."
 ]
 
 def saludo(sentence):
@@ -615,7 +621,7 @@ def respuesta_corpus(user_response, sent_tokens):
     req_tfidf = flat[-2]
     
     if req_tfidf == 0:
-        return "Lo siento, no encontré información sobre ese tema en el material de Tutorías Académicas UNSAAC. Intenta reformular tu pregunta."
+        return "Lo siento, no encontré información sobre ese tema en el material disponible. Intenta reformular tu pregunta."
     return tokens_temp[idx]
 
 def obtener_respuesta(user_input, sent_tokens):
@@ -633,7 +639,7 @@ def obtener_respuesta(user_input, sent_tokens):
     return respuesta_corpus(texto, sent_tokens)
 
 # ─────────────────────────────────────────────────────────────
-# FUNCIÓN PARA MOSTRAR LA PÁGINA PRINCIPAL (Escuela Informática)
+# FUNCIÓN PARA MOSTRAR LA PÁGINA PRINCIPAL
 # ─────────────────────────────────────────────────────────────
 def mostrar_pagina_principal():
     # Barra superior
@@ -652,7 +658,7 @@ def mostrar_pagina_principal():
     </div>
     """, unsafe_allow_html=True)
     
-    # Header principal con botón de chatbot
+    # Header principal
     st.markdown("""
     <div class="main-header">
         <div class="logo-area">
@@ -662,18 +668,8 @@ def mostrar_pagina_principal():
                 <p>UNSAAC - Universidad Nacional de San Antonio Abad del Cusco</p>
             </div>
         </div>
-        <button class="chatbot-header-btn" onclick="window.parent.document.querySelector('button[key=\'chatbot_header_btn\']').click()">
-            💬 Asistente Virtual
-        </button>
     </div>
     """, unsafe_allow_html=True)
-    
-    # Botón oculto para Streamlit (se activa con el click del botón HTML)
-    col1, col2, col3 = st.columns([1, 1, 1])
-    with col2:
-        if st.button("💬 Asistente Virtual", key="chatbot_header_btn", help="Abrir asistente virtual"):
-            st.session_state.pagina = "chat"
-            st.rerun()
     
     # Navegación
     st.markdown("""
@@ -800,6 +796,49 @@ def mostrar_pagina_principal():
         </div>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Botón flotante del chatbot (ahora funcionando correctamente)
+    st.markdown("""
+    <style>
+    .chatbot-fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+    }
+    .chatbot-fab button {
+        background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 14px 28px;
+        color: #8B0000;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 20px rgba(139,0,0,0.3);
+    }
+    .chatbot-fab button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+        box-shadow: 0 6px 25px rgba(139,0,0,0.4);
+    }
+    </style>
+    <div class="chatbot-fab">
+        <button onclick="window.parent.document.querySelector('button[key=\\'fab_chat_btn\\']').click()">
+            💬 Asistente Virtual
+        </button>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Botón oculto para Streamlit
+    if st.button("", key="fab_chat_btn", help="Abrir asistente virtual"):
+        st.session_state.pagina = "chat"
+        st.rerun()
 
 # ─────────────────────────────────────────────────────────────
 # FUNCIÓN PARA MOSTRAR EL CHAT MODERNO
@@ -814,7 +853,7 @@ def mostrar_chat():
             st.session_state.pagina = "principal"
             st.rerun()
     
-    # Header del chat moderno
+    # Header del chat
     st.markdown("""
     <div class="header-box">
         <span style="font-size:40px;">🤖💻</span>
@@ -855,7 +894,7 @@ def mostrar_chat():
         st.caption("💡 Powered by TF-IDF · NLTK")
         st.caption("© EP Ingeniería Informática - UNSAAC")
     
-    # Estado inicial del chat con mensaje de bienvenida personalizado
+    # Estado inicial del chat con mensaje de bienvenida
     if "mensajes" not in st.session_state:
         st.session_state.mensajes = [{
             "rol": "bot",
@@ -912,11 +951,9 @@ def mostrar_chat():
 # ─────────────────────────────────────────────────────────────
 # CONTROL PRINCIPAL
 # ─────────────────────────────────────────────────────────────
-# Inicializar estado
 if "pagina" not in st.session_state:
     st.session_state.pagina = "principal"
 
-# Mostrar la página según el estado
 if st.session_state.pagina == "chat":
     mostrar_chat()
 else:
