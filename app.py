@@ -17,17 +17,17 @@ nltk.download('omw-1.4', quiet=True)
 # CONFIGURACIÓN DE LA PÁGINA
 # ─────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="UNSAAC - Universidad Nacional de San Antonio Abad del Cusco",
-    page_icon="🏛️",
+    page_title="Escuela Profesional de Ingeniería Informática y de Sistemas - UNSAAC",
+    page_icon="💻",
     layout="wide"
 )
 
 # ─────────────────────────────────────────────────────────────
-# CSS PERSONALIZADO - Estilo UNSAAC
+# CSS PERSONALIZADO - Estilo Escuela de Ingeniería Informática
 # ─────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -36,12 +36,12 @@ st.markdown("""
 }
 
 html, body, [class*="css"] {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Ocultar elementos de Streamlit */
 header[data-testid="stHeader"] {
-    background: #003366;
+    background: #1a2a6c;
 }
 
 #MainMenu {visibility: hidden;}
@@ -52,10 +52,10 @@ footer {visibility: hidden;}
     max-width: 100%;
 }
 
-/* === BARRA SUPERIOR AZUL === */
+/* === BARRA SUPERIOR === */
 .top-bar {
-    background: #003366;
-    color: white;
+    background: #0f1b4f;
+    color: #e0e0e0;
     padding: 8px 120px;
     font-size: 12px;
     display: flex;
@@ -65,10 +65,15 @@ footer {visibility: hidden;}
 }
 
 .top-bar a {
-    color: white;
+    color: #e0e0e0;
     text-decoration: none;
     margin-left: 20px;
     font-size: 12px;
+    transition: color 0.3s;
+}
+
+.top-bar a:hover {
+    color: #ff8c00;
 }
 
 .top-bar-left {
@@ -83,49 +88,80 @@ footer {visibility: hidden;}
 
 /* === HEADER PRINCIPAL === */
 .main-header {
-    background: white;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 50%, #1a2a6c 100%);
     padding: 20px 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     flex-wrap: wrap;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo-icon {
-    font-size: 48px;
+    font-size: 52px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
 }
 
 .logo-text h1 {
-    color: #003366;
-    font-size: 22px;
+    color: white;
+    font-size: 24px;
     font-weight: 700;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.logo-text h1 span {
+    color: #ff8c00;
 }
 
 .logo-text p {
-    color: #666;
+    color: rgba(255,255,255,0.8);
     font-size: 11px;
-    margin: 0;
+    margin: 5px 0 0;
+}
+
+/* Botón del Chatbot en el Header */
+.chatbot-header-btn {
+    background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+    border: none;
+    border-radius: 40px;
+    padding: 12px 28px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.chatbot-header-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff6b00 0%, #e55a00 100%);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 /* === NAVEGACIÓN === */
 .nav-bar {
-    background: #004d99;
+    background: #0f1b4f;
     padding: 0 120px;
     overflow-x: auto;
+    border-bottom: 3px solid #ff8c00;
 }
 
 .nav-bar ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 35px;
     margin: 0;
     padding: 0;
 }
@@ -134,21 +170,23 @@ footer {visibility: hidden;}
     padding: 15px 0;
     color: white;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
 }
 
 .nav-bar li:hover {
-    background: #003366;
-    padding: 15px 0;
+    color: #ff8c00;
+    border-bottom: 2px solid #ff8c00;
+    margin-bottom: -2px;
 }
 
 /* === SLIDER / BANNER === */
 .slider {
-    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-    padding: 60px 120px;
-    color: white;
+    background: linear-gradient(135deg, #e8f0ff 0%, #d4e2fc 100%);
+    padding: 50px 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -156,46 +194,95 @@ footer {visibility: hidden;}
 }
 
 .slider-text h2 {
-    font-size: 36px;
+    color: #1a2a6c;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .slider-text p {
+    color: #444;
     font-size: 16px;
     opacity: 0.9;
 }
 
 .slider-image {
-    font-size: 80px;
+    font-size: 90px;
+}
+
+/* === SECCIÓN DE INFORMACIÓN === */
+.info-section {
+    padding: 50px 120px;
+    background: #f8f9fc;
+}
+
+.section-title {
+    color: #1a2a6c;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 5px solid #ff8c00;
+    padding-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.info-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.info-title {
+    color: #1a2a6c;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.info-desc {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
 /* === SECCIÓN DE NOTICIAS === */
 .news-section {
     padding: 50px 120px;
-    background: #f5f7fa;
-}
-
-.section-title {
-    color: #003366;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    border-left: 5px solid #ffcc00;
-    padding-left: 15px;
+    background: white;
 }
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .news-card {
-    background: white;
-    border-radius: 10px;
+    background: #f8f9fc;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s;
 }
 
@@ -204,12 +291,12 @@ footer {visibility: hidden;}
 }
 
 .news-img {
-    background: #004d99;
-    height: 180px;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 55px;
     color: white;
 }
 
@@ -218,16 +305,16 @@ footer {visibility: hidden;}
 }
 
 .news-date {
-    color: #ffcc00;
+    color: #ff8c00;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
 .news-title {
-    color: #003366;
+    color: #1a2a6c;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
@@ -237,52 +324,16 @@ footer {visibility: hidden;}
     line-height: 1.5;
 }
 
-/* === ENLACES RÁPIDOS === */
-.quick-links {
-    padding: 50px 120px;
-    background: white;
-}
-
-.links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-}
-
-.link-item {
-    text-align: center;
-    padding: 25px 15px;
-    background: #f5f7fa;
-    border-radius: 10px;
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.link-item:hover {
-    background: #003366;
-    color: white;
-}
-
-.link-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.link-text {
-    font-size: 13px;
-    font-weight: 500;
-}
-
 /* === FOOTER === */
 .footer {
-    background: #002244;
+    background: #0a0f2a;
     color: #aaa;
-    padding: 40px 120px 20px;
+    padding: 50px 120px 25px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
     margin-bottom: 30px;
 }
@@ -290,7 +341,8 @@ footer {visibility: hidden;}
 .footer-col h4 {
     color: white;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .footer-col p, .footer-col a {
@@ -299,123 +351,103 @@ footer {visibility: hidden;}
     line-height: 1.8;
     text-decoration: none;
     display: block;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #ff8c00;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #004466;
+    border-top: 1px solid #1a2a6c;
     font-size: 11px;
 }
 
-/* === CHATBOT BUTTON FLOTANTE === */
-.floating-chat-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
-}
-
-.floating-chat-btn button {
-    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-    border: none;
-    border-radius: 50px;
-    padding: 15px 25px;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0,51,102,0.4);
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.floating-chat-btn button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
-}
-
-/* === ESTILOS DEL CHAT === */
+/* === ESTILOS DEL CHAT MODERNO === */
 .chat-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     min-height: 100vh;
+    background: #f8f9fc;
 }
 
 .header-box {
-    background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-    border-radius: 16px;
-    padding: 20px 24px;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
+    border-radius: 20px;
+    padding: 20px 28px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(26,42,108,0.2);
 }
 
 .header-title {
     color: white;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header-sub {
-    color: #ffcc00;
+    color: #ff8c00;
     font-size: 13px;
-    margin: 4px 0 0;
+    margin: 6px 0 0;
 }
 
 .bubble-bot {
-    background: #f0f2f5;
-    border-radius: 16px 16px 16px 4px;
-    padding: 12px 16px;
+    background: white;
+    border-radius: 18px 18px 18px 6px;
+    padding: 14px 18px;
     font-size: 14px;
-    color: #1a1a1a;
+    color: #1a1a2e;
     max-width: 80%;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .bubble-user {
-    background: #003366;
-    border-radius: 16px 16px 4px 16px;
-    padding: 12px 16px;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
+    border-radius: 18px 18px 6px 18px;
+    padding: 14px 18px;
     font-size: 14px;
     color: white;
     max-width: 80%;
     margin-left: auto;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .row-bot {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .row-user {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .avatar-bot {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: #004d99;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 18px;
     flex-shrink: 0;
-    margin-right: 8px;
+    margin-right: 10px;
     margin-top: 2px;
 }
 
@@ -424,37 +456,84 @@ footer {visibility: hidden;}
 }
 
 .back-btn-container button {
-    background: #003366;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3f8f 100%);
     color: white;
     border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
+    border-radius: 30px;
+    padding: 10px 25px;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 .back-btn-container button:hover {
-    background: #004d99;
+    background: linear-gradient(135deg, #2a3f8f 0%, #1a2a6c 100%);
+    transform: translateX(-3px);
+}
+
+/* Estilo del input del chat */
+.stChatInputContainer > div {
+    border-radius: 30px !important;
+    border: 2px solid #e0e0e0 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+}
+
+.stChatInputContainer > div:focus-within {
+    border-color: #ff8c00 !important;
+    box-shadow: 0 2px 15px rgba(255,140,0,0.1) !important;
 }
 
 /* Sidebar del chat */
 [data-testid="stSidebar"] {
-    background: #f5f7fa;
+    background: linear-gradient(180deg, #f8f9fc 0%, #eef2f7 100%);
+}
+
+[data-testid="stSidebar"] button {
+    border-radius: 12px !important;
+    transition: all 0.3s !important;
+}
+
+[data-testid="stSidebar"] button:hover {
+    background: #ff8c00 !important;
+    color: white !important;
+    transform: translateX(5px);
+}
+
+/* Botones de sugerencias */
+.suggestion-btn {
+    background: white !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 25px !important;
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+    transition: all 0.3s !important;
+}
+
+.suggestion-btn:hover {
+    background: #ff8c00 !important;
+    border-color: #ff8c00 !important;
+    color: white !important;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .top-bar, .main-header, .nav-bar, .slider, .news-section, .quick-links, .footer {
+    .top-bar, .main-header, .nav-bar, .slider, .info-section, .news-section, .footer {
         padding-left: 20px;
         padding-right: 20px;
     }
     
     .slider-text h2 {
-        font-size: 24px;
+        font-size: 22px;
     }
     
     .slider-image {
-        font-size: 50px;
+        font-size: 45px;
+    }
+    
+    .chatbot-header-btn {
+        padding: 8px 18px;
+        font-size: 12px;
     }
 }
 </style>
@@ -554,7 +633,7 @@ def obtener_respuesta(user_input, sent_tokens):
     return respuesta_corpus(texto, sent_tokens)
 
 # ─────────────────────────────────────────────────────────────
-# FUNCIÓN PARA MOSTRAR LA PÁGINA PRINCIPAL
+# FUNCIÓN PARA MOSTRAR LA PÁGINA PRINCIPAL (Escuela Informática)
 # ─────────────────────────────────────────────────────────────
 def mostrar_pagina_principal():
     # Barra superior
@@ -562,41 +641,51 @@ def mostrar_pagina_principal():
     <div class="top-bar">
         <div class="top-bar-left">
             <span>📞 (084) 123456</span>
-            <span>✉️ informes@unsaac.edu.pe</span>
+            <span>✉️ informatica@unsaac.edu.pe</span>
         </div>
         <div class="top-bar-right">
             <a href="#">Intranet</a>
             <a href="#">Correo Institucional</a>
-            <a href="#">Biblioteca Virtual</a>
-            <a href="#">Aula Virtual</a>
+            <a href="#">Laboratorios Virtuales</a>
+            <a href="#">Repositorio</a>
         </div>
     </div>
     """, unsafe_allow_html=True)
     
-    # Header principal
+    # Header principal con botón de chatbot
     st.markdown("""
     <div class="main-header">
         <div class="logo-area">
-            <div class="logo-icon">🏛️</div>
+            <div class="logo-icon">💻</div>
             <div class="logo-text">
-                <h1>UNSAAC</h1>
-                <p>Universidad Nacional de San Antonio Abad del Cusco</p>
+                <h1>Escuela Profesional de <span>Ingeniería Informática y de Sistemas</span></h1>
+                <p>UNSAAC - Universidad Nacional de San Antonio Abad del Cusco</p>
             </div>
         </div>
+        <button class="chatbot-header-btn" onclick="window.parent.document.querySelector('button[key=\'chatbot_header_btn\']').click()">
+            💬 Asistente Virtual
+        </button>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Botón oculto para Streamlit (se activa con el click del botón HTML)
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        if st.button("💬 Asistente Virtual", key="chatbot_header_btn", help="Abrir asistente virtual"):
+            st.session_state.pagina = "chat"
+            st.rerun()
     
     # Navegación
     st.markdown("""
     <div class="nav-bar">
         <ul>
             <li>🏠 Inicio</li>
-            <li>📖 La Universidad</li>
-            <li>📚 Facultades</li>
-            <li>🎓 Admisión</li>
-            <li>📝 Investigación</li>
-            <li>🌍 Internacional</li>
-            <li>📢 Transparencia</li>
+            <li>📖 Presentación</li>
+            <li>📚 Plan de Estudios</li>
+            <li>👨‍🏫 Docentes</li>
+            <li>🔬 Investigación</li>
+            <li>💼 Bolsa Laboral</li>
+            <li>📢 Eventos</li>
             <li>📞 Contacto</li>
         </ul>
     </div>
@@ -606,11 +695,35 @@ def mostrar_pagina_principal():
     st.markdown("""
     <div class="slider">
         <div class="slider-text">
-            <h2>Excelencia Académica <br>con Tradición e Innovación</h2>
-            <p>Formamos profesionales líderes con valores éticos y compromiso social</p>
+            <h2>Formando Ingenieros<br>para el Futuro Digital</h2>
+            <p>Innovación, tecnología y excelencia académica al servicio del desarrollo regional</p>
         </div>
         <div class="slider-image">
-            🎓🏛️
+            💻⚡🤖
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Sección de información de la Escuela
+    st.markdown("""
+    <div class="info-section">
+        <div class="section-title">🎯 Sobre la Escuela</div>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">🎓</div>
+                <div class="info-title">Misión</div>
+                <div class="info-desc">Formar profesionales líderes en Ingeniería Informática y de Sistemas con sólidos conocimientos científicos, tecnológicos y humanísticos.</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">👁️</div>
+                <div class="info-title">Visión</div>
+                <div class="info-desc">Ser reconocida como la mejor escuela de ingeniería informática de la región, con acreditación internacional y alto impacto social.</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🏆</div>
+                <div class="info-title">Logros</div>
+                <div class="info-desc">Acreditación ICACIT · Convenios internacionales · Centro de innovación tecnológica · Startups universitarias.</div>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -618,60 +731,31 @@ def mostrar_pagina_principal():
     # Sección de noticias
     st.markdown("""
     <div class="news-section">
-        <div class="section-title">📰 Últimas Noticias</div>
+        <div class="section-title">📰 Novedades y Eventos</div>
         <div class="news-grid">
             <div class="news-card">
-                <div class="news-img">📢</div>
+                <div class="news-img">💻</div>
                 <div class="news-content">
-                    <div class="news-date">15 DE ENERO, 2025</div>
-                    <div class="news-title">Convocatoria a exámenes de admisión 2025-I</div>
-                    <div class="news-desc">La Oficina Central de Admisión informa sobre el cronograma de exámenes para el próximo ciclo académico.</div>
+                    <div class="news-date">18 DE ENERO, 2025</div>
+                    <div class="news-title">Hackathon UNSAAC 2025</div>
+                    <div class="news-desc">Participa en el evento de innovación tecnológica más importante de la región. ¡Inscripciones abiertas!</div>
                 </div>
             </div>
             <div class="news-card">
-                <div class="news-img">🎓</div>
+                <div class="news-img">🤖</div>
                 <div class="news-content">
-                    <div class="news-date">10 DE ENERO, 2025</div>
-                    <div class="news-title">Graduación de nuevos profesionales</div>
-                    <div class="news-desc">Más de 500 estudiantes recibieron su título profesional en ceremonia realizada en el Paraninfo Universitario.</div>
+                    <div class="news-date">12 DE ENERO, 2025</div>
+                    <div class="news-title">Taller de Inteligencia Artificial</div>
+                    <div class="news-desc">Curso intensivo de Machine Learning y Deep Learning con certificación.</div>
                 </div>
             </div>
             <div class="news-card">
-                <div class="news-img">🔬</div>
+                <div class="news-img">🌐</div>
                 <div class="news-content">
                     <div class="news-date">05 DE ENERO, 2025</div>
-                    <div class="news-title">Convenio internacional con Universidad de Salamanca</div>
-                    <div class="news-desc">Estudiantes UNSAAC podrán realizar intercambios académicos en España.</div>
+                    <div class="news-title">Convenio con Google Developer Groups</div>
+                    <div class="news-desc">Estudiantes podrán acceder a certificaciones y mentorías con expertos de Google.</div>
                 </div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Enlaces rápidos
-    st.markdown("""
-    <div class="quick-links">
-        <div class="section-title">🔗 Enlaces de Interés</div>
-        <div class="links-grid">
-            <div class="link-item">
-                <div class="link-icon">📝</div>
-                <div class="link-text">Trámites<br>Documentarios</div>
-            </div>
-            <div class="link-item">
-                <div class="link-icon">📚</div>
-                <div class="link-text">Biblioteca<br>Central</div>
-            </div>
-            <div class="link-item">
-                <div class="link-icon">💻</div>
-                <div class="link-text">Campus<br>Virtual</div>
-            </div>
-            <div class="link-item">
-                <div class="link-icon">🎓</div>
-                <div class="link-text">Becas y<br>Créditos</div>
-            </div>
-            <div class="link-item">
-                <div class="link-icon">📊</div>
-                <div class="link-text">Investigación<br>+</div>
             </div>
         </div>
     </div>
@@ -682,76 +766,79 @@ def mostrar_pagina_principal():
     <div class="footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>UNSAAC</h4>
-                <p>Universidad Nacional de San Antonio Abad del Cusco</p>
-                <p>Av. de la Cultura Nro. 733</p>
-                <p>Cusco - Perú</p>
+                <h4>💻 EP Ingeniería Informática y Sistemas</h4>
+                <p>Facultad de Ingeniería</p>
+                <p>Av. de la Cultura Nro. 733 - Cusco</p>
+                <p>📞 (084) 123456 anexo 1234</p>
+                <p>✉️ informatica@unsaac.edu.pe</p>
             </div>
             <div class="footer-col">
-                <h4>Enlaces útiles</h4>
-                <a href="#">Portal de Transparencia</a>
-                <a href="#">Defensoría Universitaria</a>
-                <a href="#">Bolsa de Trabajo</a>
+                <h4>Enlaces rápidos</h4>
+                <a href="#">Plan de Estudios</a>
+                <a href="#">Horarios</a>
                 <a href="#">Calendario Académico</a>
+                <a href="#">Reglamento Interno</a>
+                <a href="#">Tramite Documentario</a>
             </div>
             <div class="footer-col">
-                <h4>Servicios</h4>
-                <a href="#">Correo Institucional</a>
-                <a href="#">Aula Virtual</a>
-                <a href="#">Biblioteca Virtual</a>
-                <a href="#">Solicitudes en Línea</a>
+                <h4>Laboratorios</h4>
+                <a href="#">Laboratorio de Software</a>
+                <a href="#">Laboratorio de Redes</a>
+                <a href="#">Laboratorio de IA</a>
+                <a href="#">Centro de Cómputo</a>
             </div>
             <div class="footer-col">
                 <h4>Síguenos</h4>
-                <a href="#">📘 Facebook</a>
-                <a href="#">🐦 Twitter</a>
-                <a href="#">📸 Instagram</a>
-                <a href="#">▶️ YouTube</a>
+                <a href="#">📘 Facebook - EP Informática</a>
+                <a href="#">🐦 Twitter - @informaticaUNSAAC</a>
+                <a href="#">📸 Instagram - ep.informatica.unsaac</a>
+                <a href="#">💻 GitHub - Labs</a>
             </div>
         </div>
         <div class="footer-bottom">
-            © 2025 Universidad Nacional de San Antonio Abad del Cusco - Todos los derechos reservados
+            © 2025 Escuela Profesional de Ingeniería Informática y de Sistemas - UNSAAC | Todos los derechos reservados
         </div>
     </div>
     """, unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────────────────────
-# FUNCIÓN PARA MOSTRAR EL CHAT
+# FUNCIÓN PARA MOSTRAR EL CHAT MODERNO
 # ─────────────────────────────────────────────────────────────
 def mostrar_chat():
     st.markdown('<div class="chat-container">', unsafe_allow_html=True)
     
     # Botón para volver a la página principal
-    col1, col2 = st.columns([1, 5])
+    col1, col2 = st.columns([1, 10])
     with col1:
         if st.button("← Volver", key="back_btn"):
             st.session_state.pagina = "principal"
             st.rerun()
     
-    # Header del chat
+    # Header del chat moderno
     st.markdown("""
     <div class="header-box">
-        <span style="font-size:36px;">🎓</span>
+        <span style="font-size:40px;">🤖💻</span>
         <div>
-            <p class="header-title">Asistente de Tutorías UNSAAC</p>
-            <p class="header-sub">Resuelve tus dudas académicas y universitarias</p>
+            <p class="header-title">Asistente Virtual - Ingeniería Informática</p>
+            <p class="header-sub">Resuelve tus dudas sobre la carrera, cursos, horarios y servicios</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
     
     # Sidebar del chat
     with st.sidebar:
-        st.markdown("### 🎓 Asistente de Tutorías UNSAAC")
+        st.markdown("### 🤖 Asistente Virtual")
+        st.markdown("**Escuela de Ingeniería Informática y Sistemas**")
         st.markdown("---")
         
         temas = {
-            "🎓 Tutoría": "¿Qué es la tutoría académica?",
-            "👨‍🏫 Tutor": "¿Cuáles son las funciones del tutor académico?",
-            "📚 Técnicas de estudio": "¿Qué técnicas de estudio existen?",
-            "🧠 Bienestar": "¿Qué servicios ofrece Bienestar Universitario?",
-            "📈 Rendimiento": "¿Qué hacer si tengo bajo rendimiento académico?",
-            "📝 Matrícula": "¿Cómo se realiza la matrícula?",
-            "💼 Perfil profesional": "¿Cómo elaborar un currículum vitae?"
+            "💻 Sobre la carrera": "¿Qué perfil tiene un ingeniero informático?",
+            "📚 Plan de estudios": "¿Qué cursos lleva la carrera?",
+            "👨‍🏫 Docentes": "¿Quiénes son los docentes de la escuela?",
+            "🔬 Laboratorios": "¿Qué laboratorios tiene la escuela?",
+            "💼 Bolsa laboral": "¿Dónde pueden trabajar los egresados?",
+            "🌐 Intercambios": "¿Hay programas de intercambio?",
+            "📝 Matrícula": "¿Cómo es el proceso de matrícula?"
         }
         
         for label, pregunta in temas.items():
@@ -765,13 +852,14 @@ def mostrar_chat():
             st.rerun()
         
         st.markdown("---")
-        st.caption("Powered by TF-IDF · NLTK")
+        st.caption("💡 Powered by TF-IDF · NLTK")
+        st.caption("© EP Ingeniería Informática - UNSAAC")
     
-    # Estado inicial del chat
+    # Estado inicial del chat con mensaje de bienvenida personalizado
     if "mensajes" not in st.session_state:
         st.session_state.mensajes = [{
             "rol": "bot",
-            "texto": "¡Hola! Soy el asistente virtual de Tutorías Académicas de la UNSAAC. Puedes preguntarme sobre tutoría académica, bienestar universitario, técnicas de estudio, matrícula, rendimiento académico y más. ¿En qué puedo ayudarte?"
+            "texto": "¡Hola! 👋 Bienvenido al asistente virtual de la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC. Estoy aquí para ayudarte. Puedes realizar cualquier consulta sobre la escuela, cursos, horarios, trámites y servicios."
         }]
     
     if "pregunta_rapida" not in st.session_state:
@@ -785,7 +873,7 @@ def mostrar_chat():
         if msg["rol"] == "bot":
             col1, col2 = st.columns([1, 10])
             with col1:
-                st.markdown("🤖")
+                st.markdown('<div class="avatar-bot">🤖</div>', unsafe_allow_html=True)
             with col2:
                 st.markdown(f'<div class="bubble-bot">{msg["texto"]}</div>', unsafe_allow_html=True)
         else:
@@ -795,10 +883,10 @@ def mostrar_chat():
     if len(st.session_state.mensajes) <= 1:
         st.markdown("**💡 Preguntas sugeridas:**")
         sugerencias = [
-            "¿Qué es la tutoría académica?",
-            "¿Qué es la matrícula condicionada?",
-            "¿Qué técnicas de estudio existen?",
-            "¿Cuándo debo acudir a Bienestar Universitario?"
+            "¿Qué perfil tiene un ingeniero informático?",
+            "¿Qué cursos lleva la carrera?",
+            "¿Qué laboratorios tiene la escuela?",
+            "¿Hay programas de intercambio estudiantil?"
         ]
         cols = st.columns(len(sugerencias))
         for col, sug in zip(cols, sugerencias):
@@ -833,42 +921,3 @@ if st.session_state.pagina == "chat":
     mostrar_chat()
 else:
     mostrar_pagina_principal()
-    
-    # Botón flotante en la página principal usando columnas
-    with st.container():
-        col1, col2, col3 = st.columns([10, 1, 1])
-        with col3:
-            if st.button("💬 Asistente Virtual", key="floating_chat"):
-                st.session_state.pagina = "chat"
-                st.rerun()
-    
-    # CSS para posicionar el botón
-    st.markdown("""
-    <style>
-    div[data-testid="column"]:nth-child(3) {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: auto !important;
-        z-index: 9999;
-    }
-    button[key="floating_chat"] {
-        background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-        border: none;
-        border-radius: 50px;
-        padding: 15px 25px;
-        color: white;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        cursor: pointer;
-        box-shadow: 0 5px 20px rgba(0,51,102,0.4);
-        transition: all 0.3s;
-        white-space: nowrap;
-    }
-    button[key="floating_chat"]:hover {
-        transform: scale(1.05);
-        background: linear-gradient(135deg, #004d99 0%, #0066cc 100%);
-    }
-    </style>
-    """, unsafe_allow_html=True)
