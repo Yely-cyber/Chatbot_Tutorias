@@ -1,5 +1,5 @@
 Las tutorías son un servicio de orientación y apoyo para los estudiantes durante su vida universitaria.
-La tutoría académica es un acompañamiento permanente que se brinda a los estudiantes durante toda su formación universitaria.
+La tutoría académica en la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC es un acompañamiento permanente que se brinda a los estudiantes durante toda su formación universitaria.
 La finalidad de las tutorías es orientar, apoyar y hacer seguimiento al estudiante para mejorar su rendimiento académico, fortalecer su formación personal y ayudarlo a terminar satisfactoriamente su carrera profesional.
 La tutoría no solo se relaciona con las notas o con cursos como programación, bases de datos o redes. También considera los problemas personales, sociales y profesionales que pueden afectar el aprendizaje del estudiante.
 Las tutorías son importantes porque permiten reconocer las dificultades del estudiante a tiempo y ofrecerle el apoyo que necesita.
@@ -126,44 +126,28 @@ Existen varias técnicas de estudio que pueden ser útiles para los estudiantes 
 La técnica Pomodoro consiste en estudiar durante veinticinco minutos y descansar cinco minutos.
 Después de realizar cuatro bloques de estudio, se toma un descanso más largo.
 La técnica Pomodoro es útil para depurar código o estudiar algoritmos porque ayuda a evitar el cansancio mental.
-El video recomendado para aprender la técnica Pomodoro es:
-https://youtu.be/3D0-l2O5k8Y?si=tPZbf7sGkTd4tJ3_
 La técnica de Cornell sirve para organizar los apuntes de las clases teóricas.
 Esta técnica es útil en cursos como Ingeniería de Software o Sistemas Operativos.
 La técnica de Cornell consiste en dividir la hoja en tres partes: apuntes principales, palabras clave y resumen.
-Esta técnica ayuda a organizar y recordar mejor los conceptos.
-El video recomendado para aprender la técnica de Cornell es:
-https://youtu.be/nrcGO_0l2JQ?si=jgh403PjVKa19zDk
 Los mapas mentales permiten representar y organizar la información de forma gráfica.
 Los mapas mentales pueden utilizarse para estudiar temas como las capas del modelo OSI o la jerarquía de memoria.
 Para crear mapas mentales se pueden utilizar herramientas como MindMeister o XMind.
-El video recomendado para aprender a elaborar mapas mentales es:
-https://youtu.be/fkyKsL1oLsQ?si=jIR10sab6hOkART8
 La mnemotecnia es una técnica que ayuda a recordar comandos, fórmulas o secuencias mediante imágenes o frases.
-Por ejemplo, para recordar el orden de una consulta en SQL se puede usar la siguiente secuencia: “SELECT... FROM... WHERE... GROUP BY... HAVING... ORDER BY”.
-El video recomendado para aprender técnicas de mnemotecnia es:
-https://youtu.be/04rqVgK5_tA?si=b_ni6rg2mGCUgAEq
+Por ejemplo, para recordar el orden de una consulta en SQL se puede usar la siguiente secuencia: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY.
 Explicar un tema a otra persona es una técnica que permite comprobar si realmente se comprendió la información.
-Por ejemplo, el estudiante puede explicar a un compañero cómo funciona un algoritmo de ordenamiento o una consulta SQL.
-Cuando el estudiante puede explicar el tema con sus propias palabras, significa que lo ha comprendido mejor.
 Las fichas de estudio, también llamadas flashcards, son tarjetas que contienen una pregunta en un lado y la respuesta en el otro.
 Las fichas de estudio son útiles para aprender conceptos y funciones de los lenguajes de programación.
-Por ejemplo, una ficha puede contener la pregunta: “¿Qué hace la función map() en Python?”.
 Para crear fichas de estudio se pueden utilizar aplicaciones como Anki o Flashcards World.
-El video recomendado para aprender a utilizar fichas de estudio es:
-https://youtu.be/5VucXcIQXxo?si=AmfzMFPFUkWMH65T
 Los grupos de estudio permiten que varios estudiantes aprendan y trabajen juntos.
 Un grupo de estudio puede ser útil para preparar un proyecto de Ingeniería de Software o una práctica calificada.
 Los integrantes pueden utilizar Trello o Notion para organizar las tareas.
 También pueden utilizar Google Calendar para programar sus reuniones.
 Los podcasts permiten que el estudiante se mantenga informado sobre tecnología e informática mientras realiza otras actividades, como viajar.
-Algunos podcasts recomendados son “Turing Podcast” y “Programar es una mierda”.
-También existen canales de YouTube como “HolaMundo” y “MoureDev”.
+Algunos podcasts recomendados son Turing Podcast y Programar es una mierda.
+También existen canales de YouTube como HolaMundo y MoureDev.
 Los cuadros comparativos permiten observar de forma clara las semejanzas, diferencias, ventajas y desventajas de distintas tecnologías.
 Por ejemplo, se puede utilizar un cuadro comparativo para comparar bases de datos SQL y NoSQL.
 También se pueden comparar frameworks web como React y Angular.
-El video recomendado para aprender a elaborar cuadros comparativos es:
-https://youtu.be/94nISi7DYNU?si=creweAWH_-CASzvg
 La gestión del tiempo consiste en organizar correctamente las actividades académicas y personales.
 La gestión del tiempo es importante para los estudiantes de informática porque pasan muchas horas frente a la computadora.
 Una forma de organizar el tiempo es crear un horario que incluya las clases, los laboratorios, el estudio individual y los proyectos.
@@ -218,3 +202,45 @@ El retiro de una asignatura no afecta el promedio académico del estudiante.
 Sin embargo, el curso retirado deberá llevarse nuevamente en otro semestre.
 El estudiante no debe confundir el retiro oficial de una asignatura con dejar de asistir al curso.
 Abandonar un curso sin realizar el retiro genera una nota desaprobatoria y disminuye el promedio académico del estudiante.
+
+=== SECCIÓN: PREGUNTAS FRECUENTES SOBRE TUTORÍAS ===
+
+¿Cómo me inscribo en una tutoría? Para inscribirte en una tutoría, debes comunicarte con tu tutor asignado. Si aún no tienes un tutor, puedes solicitar uno en la Dirección de la Escuela Profesional o ante el Comité Tutorial. También puedes acercarte a la oficina de tutorías para recibir orientación sobre el proceso de inscripción.
+
+¿Cuál es el horario de atención de las tutorías? El horario de las tutorías es coordinado entre el tutor y el estudiante, ya que son actividades extra clase. Normalmente se realizan fuera del horario regular de clases. Cada tutor publica sus horarios de atención al inicio del semestre.
+
+¿Las tutorías son virtuales o presenciales? Las tutorías pueden ser tanto virtuales como presenciales, dependiendo de la disponibilidad del tutor y las necesidades del estudiante. Se pueden realizar mediante videollamadas, reuniones en línea o encuentros presenciales en la Escuela Profesional.
+
+¿Quiénes son los tutores disponibles? Los tutores son docentes de la Escuela Profesional de Ingeniería Informática y de Sistemas. La lista de tutores disponibles se publica al inicio de cada semestre en los medios oficiales de la Escuela Profesional.
+
+¿Cuánto duran las tutorías? La duración de cada sesión de tutoría es variable y depende de las necesidades del estudiante. Generalmente, una reunión de tutoría dura entre 30 minutos y una hora. El acompañamiento tutorial dura toda la formación universitaria del estudiante.
+
+¿Las tutorías son obligatorias? La tutoría es obligatoria para los estudiantes con matrícula condicionada. Para el resto de estudiantes, la tutoría es voluntaria pero altamente recomendada para mejorar el rendimiento académico y la adaptación universitaria.
+
+¿Qué debo hacer si mi tutor no responde? Si tu tutor no responde a tus comunicaciones, debes informar esta situación al Comité Tutorial o a la Dirección de la Escuela Profesional para que puedan tomar acciones y asignarte un nuevo tutor si es necesario.
+
+¿Puedo tener más de un tutor? Cada estudiante tiene un tutor principal asignado. Sin embargo, los tres tipos de tutoría (académica, personal y profesional) son atendidos por el mismo tutor, quien puede derivarte a especialistas cuando sea necesario.
+
+¿Los tutores califican exámenes? No, los tutores no califican exámenes ni trabajos académicos. Su función es orientar y acompañar, no evaluar. Las calificaciones son responsabilidad exclusiva de los docentes de cada curso.
+
+¿Puedo solicitar tutoría para un curso específico? Sí, puedes consultar con tu tutor sobre dificultades en cursos específicos. El tutor puede orientarte sobre métodos de estudio para ese curso o derivarte con el docente del curso si es necesario.
+
+¿Qué beneficios tienen las tutorías? Las tutorías ayudan a mejorar el rendimiento académico, reducir el estrés, orientar tu futuro profesional, resolver dudas sobre la carrera, facilitar la adaptación universitaria y prevenir el abandono de los estudios.
+
+¿Cuándo empiezan las tutorías? Las tutorías comienzan desde el primer semestre de la carrera y acompañan al estudiante hasta su titulación. Al inicio de cada semestre, se asigna o confirma el tutor de cada estudiante.
+
+¿Dónde se realizan las tutorías presenciales? Las tutorías presenciales se realizan en los ambientes de la Escuela Profesional de Ingeniería Informática y de Sistemas, generalmente en los despachos de los docentes o en salas designadas para tutorías.
+
+¿Cómo puedo contactar al Comité Tutorial? Puedes contactar al Comité Tutorial a través de la Dirección de la Escuela Profesional, enviando un correo electrónico al correo oficial de tutorías o acercándote a la oficina de la Escuela en horas de atención.
+
+¿Qué hago si tengo problemas personales y necesito ayuda? Debes conversar con tu tutor con confianza. Él te escuchará y, si es necesario, te derivará a Bienestar Universitario para recibir atención psicológica o asistencia social especializada.
+
+¿Las tutorías tienen algún costo? No, las tutorías son un servicio gratuito para todos los estudiantes regulares de la Escuela Profesional de Ingeniería Informática y de Sistemas.
+
+¿Puedo cambiar de tutor? Sí, puedes solicitar el cambio de tutor presentando una solicitud justificada al Comité Tutorial. Las razones válidas incluyen incompatibilidad de horarios, diferencias en áreas de interés profesional o problemas de comunicación.
+
+¿Qué información se guarda en mi expediente de tutoría? El expediente contiene el diagnóstico inicial, el registro de reuniones, las dificultades encontradas, las acciones tomadas y los resultados obtenidos durante el proceso de tutoría. Toda esta información es confidencial.
+
+¿Cómo me preparo para mi primera reunión de tutoría? Para tu primera reunión, debes tener claro qué dificultades o consultas tienes, llevar tu horario de clases, tus notas parciales (si las tienes) y una actitud abierta para recibir orientación.
+
+¿Qué pasa si falto a una reunión de tutoría? Si faltas a una reunión de tutoría, debes justificar tu inasistencia con tu tutor. Las faltas constantes sin justificación pueden ser reportadas al Comité Tutorial, especialmente si eres un estudiante con matrícula condicionada.
