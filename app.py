@@ -552,7 +552,7 @@ footer {visibility: hidden;}
 """, unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────────────────────
-# CARGA DEL CORPUS
+# CARGA DEL CORPUS - Usando el archivo Corpus_tutorias.txt
 # ─────────────────────────────────────────────────────────────
 @st.cache_resource
 def cargar_corpus():
@@ -561,12 +561,16 @@ def cargar_corpus():
             raw = f.read().lower()
         return nltk.sent_tokenize(raw)
     except FileNotFoundError:
+        # Corpus de respaldo si no encuentra el archivo
         corpus_basico = """
-        La tutoría académica es un proceso de acompañamiento personalizado.
-        El tutor ayuda al estudiante en su desarrollo académico y personal.
-        Bienestar Universitario ofrece servicios de apoyo psicológico y social.
-        Las técnicas de estudio incluyen subrayado, resúmenes y mapas conceptuales.
-        La matrícula regular se realiza al inicio de cada semestre académico.
+        La tutoría académica en la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC es un proceso de acompañamiento permanente.
+        Existen tres tipos de tutoría: académica, personal y profesional.
+        La tutoría académica se enfoca en el rendimiento en cursos como Algoritmos, Estructura de Datos e Ingeniería de Software.
+        La tutoría personal aborda aspectos como autoestima, manejo del estrés y comunicación.
+        La tutoría profesional orienta sobre el futuro laboral y elaboración de CV.
+        El tutor es un docente de la Escuela que apoya la formación integral del estudiante.
+        La matrícula condicionada requiere obligatoriamente un tutor académico.
+        Bienestar Universitario ofrece apoyo psicológico, social y económico.
         """
         return nltk.sent_tokenize(corpus_basico)
 
@@ -590,19 +594,15 @@ def lem_normalize(text):
     )
 
 SALUDOS_IN = (
-    "hola",
-    "buenas",
-    "saludos",
-    "qué tal",
-    "hey",
-    "buenos días"
+    "hola", "buenas", "saludos", "qué tal", "hey", "buenos días", 
+    "buenas tardes", "buenas noches", "holi", "holita"
 )
 
 SALUDOS_OUT = [
-    "¡Hola! ¿En qué puedo ayudarte?",
-    "¡Hola! Soy el asistente de la Escuela de Ingeniería Informática.",
-    "¡Bienvenido! Estoy aquí para ayudarte con información académica.",
-    "¡Buenas! Puedes consultarme sobre la carrera, cursos, horarios y más."
+    "¡Hola! 👋 Soy el asistente de tutorías de la Escuela de Ingeniería Informática y Sistemas. ¿En qué puedo ayudarte?",
+    "¡Hola! Bienvenido al sistema de tutorías. Estoy aquí para resolver tus dudas sobre acompañamiento académico, personal y profesional.",
+    "¡Buenas! Soy el asistente virtual de tutorías. Puedes preguntarme sobre el proceso tutorial, funciones del tutor, técnicas de estudio, bienestar universitario y más.",
+    "¡Hola! ¿Necesitas orientación sobre tutorías académicas? Cuéntame cómo puedo ayudarte."
 ]
 
 def saludo(sentence):
@@ -611,37 +611,50 @@ def saludo(sentence):
             return random.choice(SALUDOS_OUT)
 
 def respuesta_corpus(user_response, sent_tokens):
+    # Agregar la respuesta del usuario al corpus temporal
     tokens_temp = sent_tokens.copy()
     tokens_temp.append(user_response)
     
+    # Crear vectorizador TF-IDF
     vectorizer = TfidfVectorizer(
         tokenizer=lem_normalize,
         stop_words=stopwords.words("spanish")
     )
     
+    # Calcular similitud coseno
     tfidf = vectorizer.fit_transform(tokens_temp)
     vals = cosine_similarity(tfidf[-1], tfidf)
-    idx = vals.argsort()[0][-2]
+    
+    # Encontrar la mejor coincidencia
     flat = vals.flatten()
     flat.sort()
     req_tfidf = flat[-2]
     
+    # Obtener el índice de la respuesta más similar
+    idx = vals.argsort()[0][-2]
+    
     if req_tfidf == 0:
-        return "Lo siento, no encontré información sobre ese tema en el material disponible. Intenta reformular tu pregunta."
+        return "Lo siento, no encontré información específica sobre ese tema en el material de tutorías. Por favor, reformula tu pregunta o consulta directamente con el Comité Tutorial de nuestra Escuela."
+    
     return tokens_temp[idx]
 
 def obtener_respuesta(user_input, sent_tokens):
     texto = user_input.lower().strip()
     
-    if texto in ("salir", "adios", "chau"):
-        return "¡Hasta pronto! Éxitos en tus estudios. 🎓"
-    if texto in ("gracias", "muchas gracias"):
-        return "¡Con mucho gusto! ¿Hay algo más en lo que pueda ayudarte?"
+    # Palabras de despedida
+    if texto in ("salir", "adios", "chau", "hasta luego", "nos vemos"):
+        return "¡Hasta pronto! 🎓 Recuerda que tu tutor está disponible para apoyarte durante toda tu carrera. ¡Muchos éxitos!"
     
+    # Palabras de agradecimiento
+    if texto in ("gracias", "muchas gracias", "te lo agradezco", "gracias por tu ayuda"):
+        return "¡Con mucho gusto! 😊 ¿Hay algo más en lo que pueda ayudarte sobre el proceso de tutorías?"
+    
+    # Verificar saludo
     s = saludo(texto)
     if s:
         return s
     
+    # Buscar respuesta en el corpus
     return respuesta_corpus(texto, sent_tokens)
 
 # ─────────────────────────────────────────────────────────────
@@ -691,7 +704,7 @@ def mostrar_pagina_principal():
     </script>
     """, unsafe_allow_html=True)
     
-    # Botón oculto de Streamlit para el chatbot (funcional)
+    # Botón oculto de Streamlit para el chatbot
     if st.button("", key="header_chat_btn", help="Abrir asistente virtual"):
         st.session_state.pagina = "chat"
         st.rerun()
@@ -716,66 +729,66 @@ def mostrar_pagina_principal():
     st.markdown("""
     <div class="slider">
         <div class="slider-text">
-            <h2>Formando Ingenieros<br>para el Futuro Digital</h2>
-            <p>Innovación, tecnología y excelencia académica al servicio del desarrollo regional</p>
+            <h2>Sistema de Tutoría Académica<br>Acompañamiento para tu Éxito</h2>
+            <p>Orientación personalizada para potenciar tu rendimiento y formación integral</p>
         </div>
         <div class="slider-image">
-            💻⚡🤖
+            🎓📚🤝
         </div>
     </div>
     """, unsafe_allow_html=True)
     
-    # Sección de información de la Escuela
+    # Sección de información sobre tutorías
     st.markdown("""
     <div class="info-section">
-        <div class="section-title">🎯 Sobre la Escuela</div>
+        <div class="section-title">🎓 ¿Qué es la Tutoría Académica?</div>
         <div class="info-grid">
             <div class="info-card">
-                <div class="info-icon">🎓</div>
-                <div class="info-title">Misión</div>
-                <div class="info-desc">Formar profesionales líderes en Ingeniería Informática y de Sistemas con sólidos conocimientos científicos, tecnológicos y humanísticos.</div>
+                <div class="info-icon">📚</div>
+                <div class="info-title">Tutoría Académica</div>
+                <div class="info-desc">Enfoque en tu rendimiento en cursos como Algoritmos, Estructura de Datos e Ingeniería de Software. Estrategias de estudio y organización del tiempo para programar.</div>
             </div>
             <div class="info-card">
-                <div class="info-icon">👁️</div>
-                <div class="info-title">Visión</div>
-                <div class="info-desc">Ser reconocida como la mejor escuela de ingeniería informática de la región, con acreditación internacional y alto impacto social.</div>
+                <div class="info-icon">🧠</div>
+                <div class="info-title">Tutoría Personal</div>
+                <div class="info-desc">Abordamos aspectos como autoestima, manejo del estrés por carga de trabajos y comunicación con compañeros. Derivación a Bienestar Universitario si es necesario.</div>
             </div>
             <div class="info-card">
-                <div class="info-icon">🏆</div>
-                <div class="info-title">Logros</div>
-                <div class="info-desc">Acreditación ICACIT · Convenios internacionales · Centro de innovación tecnológica · Startups universitarias.</div>
+                <div class="info-icon">💼</div>
+                <div class="info-title">Tutoría Profesional</div>
+                <div class="info-desc">Orientación sobre tu futuro como ingeniero informático: elaboración de CV, preparación para entrevistas y vinculación con el mercado laboral.</div>
             </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
     
-    # Sección de noticias
+    # Sección de noticias/tips
     st.markdown("""
     <div class="news-section">
-        <div class="section-title">📰 Novedades y Eventos</div>
+        <div class="section-title">📝 Tips para tu Éxito Académico</div>
         <div class="news-grid">
             <div class="news-card">
-                <div class="news-img">💻</div>
+                <div class="news-img">⏰</div>
                 <div class="news-content">
-                    <div class="news-date">18 DE ENERO, 2025</div>
-                    <div class="news-title">Hackathon UNSAAC 2025</div>
-                    <div class="news-desc">Participa en el evento de innovación tecnológica más importante de la región. ¡Inscripciones abiertas!</div>
+                    <div class="news-date">TÉCNICA RECOMENDADA</div>
+                    <div class="news-title">Técnica Pomodoro</div>
+                    <div class="news-desc">Estudia 25 minutos, descansa 5. Ideal para depurar código o estudiar algoritmos. Evita la fatiga mental.</div>
                 </div>
             </div>
             <div class="news-card">
-                <div class="news-img">🤖</div>
+                <div class="news-img">🗂️</div>
                 <div class="news-content">
-                    <div class="news-date">12 DE ENERO, 2025</div>
-                    <div class="news-title">Taller de Inteligencia Artificial</div>
-                    <div class="news-desc">Curso intensivo de Machine Learning y Deep Learning con certificación.</div>
+                    <div class="news-date">TÉCNICA RECOMENDADA</div>
+                    <div class="news-title">Fichas de Estudio</div>
+                    <div class="news-desc">Crea flashcards con preguntas sobre programación. Usa aplicaciones como Anki o Flashcards World.</div>
                 </div>
             </div>
             <div class="news-card">
-                <div class="news-img">🌐</div>
+                <div class="news-img">👥</div>
                 <div class="news-content">
-                    <div class="news-date">05 DE ENERO, 2025</div>
-                    <div class="news-title">Convenio con Google Developer Groups</div>
-                    <div class="news-desc">Estudiantes podrán acceder a certificaciones y mentorías con expertos de Google.</div>
+                    <div class="news-date">RECOMENDACIÓN</div>
+                    <div class="news-title">Grupos de Estudio</div>
+                    <div class="news-desc">Forma equipos para proyectos grandes. Usa Trello o Notion para organizar tareas y Google Calendar para reuniones.</div>
                 </div>
             </div>
         </div>
@@ -787,26 +800,25 @@ def mostrar_pagina_principal():
     <div class="footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>💻 EP Ingeniería Informática y Sistemas</h4>
-                <p>Facultad de Ingeniería</p>
-                <p>Av. de la Cultura Nro. 733 - Cusco</p>
+                <h4>📚 Sistema de Tutorías</h4>
+                <p>Escuela de Ingeniería Informática y Sistemas</p>
+                <p>Comité Tutorial - Director de Escuela</p>
                 <p>📞 (084) 123456 anexo 1234</p>
-                <p>✉️ informatica@unsaac.edu.pe</p>
+                <p>✉️ tutorias.informatica@unsaac.edu.pe</p>
             </div>
             <div class="footer-col">
-                <h4>Enlaces rápidos</h4>
-                <a href="#">Plan de Estudios</a>
-                <a href="#">Horarios</a>
+                <h4>Enlaces útiles</h4>
+                <a href="#">Reglamento de Tutoría</a>
+                <a href="#">Horarios de Tutoría</a>
+                <a href="#">Bienestar Universitario</a>
                 <a href="#">Calendario Académico</a>
-                <a href="#">Reglamento Interno</a>
-                <a href="#">Tramite Documentario</a>
             </div>
             <div class="footer-col">
-                <h4>Laboratorios</h4>
-                <a href="#">Laboratorio de Software</a>
-                <a href="#">Laboratorio de Redes</a>
-                <a href="#">Laboratorio de IA</a>
-                <a href="#">Centro de Cómputo</a>
+                <h4>Recursos</h4>
+                <a href="#">Técnicas de Estudio</a>
+                <a href="#">Gestión del Tiempo</a>
+                <a href="#">Manejo del Estrés</a>
+                <a href="#">Preparación para Entrevistas</a>
             </div>
             <div class="footer-col">
                 <h4>Síguenos</h4>
@@ -817,7 +829,7 @@ def mostrar_pagina_principal():
             </div>
         </div>
         <div class="footer-bottom">
-            © 2025 Escuela Profesional de Ingeniería Informática y de Sistemas - UNSAAC | Todos los derechos reservados
+            © 2025 Escuela Profesional de Ingeniería Informática y de Sistemas - UNSAAC | Sistema de Tutorías Académicas
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -838,28 +850,28 @@ def mostrar_chat():
     # Header del chat
     st.markdown("""
     <div class="header-box">
-        <span style="font-size:40px;">🤖💻</span>
+        <span style="font-size:40px;">📚🤖</span>
         <div>
-            <p class="header-title">Asistente Virtual - Ingeniería Informática</p>
-            <p class="header-sub">Resuelve tus dudas sobre la carrera, cursos, horarios y servicios</p>
+            <p class="header-title">Asistente de Tutorías - Ingeniería Informática</p>
+            <p class="header-sub">Resuelve tus dudas sobre acompañamiento académico, personal y profesional</p>
         </div>
     </div>
     """, unsafe_allow_html=True)
     
     # Sidebar del chat
     with st.sidebar:
-        st.markdown("### 🤖 Asistente Virtual")
+        st.markdown("### 📚 Asistente de Tutorías")
         st.markdown("**Escuela de Ingeniería Informática y Sistemas**")
         st.markdown("---")
         
         temas = {
-            "💻 Sobre la carrera": "¿Qué perfil tiene un ingeniero informático?",
-            "📚 Plan de estudios": "¿Qué cursos lleva la carrera?",
-            "👨‍🏫 Docentes": "¿Quiénes son los docentes de la escuela?",
-            "🔬 Laboratorios": "¿Qué laboratorios tiene la escuela?",
-            "💼 Bolsa laboral": "¿Dónde pueden trabajar los egresados?",
-            "🌐 Intercambios": "¿Hay programas de intercambio?",
-            "📝 Matrícula": "¿Cómo es el proceso de matrícula?"
+            "🎓 ¿Qué es la tutoría?": "¿Qué es la tutoría académica?",
+            "📚 Tipos de tutoría": "¿Cuáles son los tipos de tutoría?",
+            "👨‍🏫 Funciones del tutor": "¿Cuáles son las funciones del tutor académico?",
+            "📝 Matrícula condicionada": "¿Qué es matrícula condicionada?",
+            "🧠 Bienestar Universitario": "¿Qué servicios ofrece Bienestar Universitario?",
+            "⏰ Técnicas de estudio": "¿Qué técnicas de estudio existen para programación?",
+            "💼 Perfil profesional": "¿Cómo preparar mi CV como ingeniero informático?"
         }
         
         for label, pregunta in temas.items():
@@ -874,13 +886,14 @@ def mostrar_chat():
         
         st.markdown("---")
         st.caption("💡 Powered by TF-IDF · NLTK")
+        st.caption("📖 Basado en el Reglamento de Tutoría UNSAAC")
         st.caption("© EP Ingeniería Informática - UNSAAC")
     
     # Estado inicial del chat con mensaje de bienvenida
     if "mensajes" not in st.session_state:
         st.session_state.mensajes = [{
             "rol": "bot",
-            "texto": "¡Hola! 👋 Bienvenido al asistente virtual de la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC. Estoy aquí para ayudarte. Puedes realizar cualquier consulta sobre la escuela, cursos, horarios, trámites y servicios."
+            "texto": "¡Hola! 👋 Bienvenido al asistente virtual de tutorías de la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC.\n\nEstoy aquí para ayudarte con información sobre:\n• Proceso de tutoría académica, personal y profesional\n• Funciones del tutor y Comité Tutorial\n• Técnicas de estudio para programación\n• Bienestar Universitario y apoyo psicológico\n• Matrícula condicionada y rendimiento académico\n• Elaboración de CV y preparación para entrevistas\n\n¿En qué puedo ayudarte hoy? 🎓"
         }]
     
     if "pregunta_rapida" not in st.session_state:
@@ -894,7 +907,7 @@ def mostrar_chat():
         if msg["rol"] == "bot":
             col1, col2 = st.columns([1, 10])
             with col1:
-                st.markdown('<div class="avatar-bot">🤖</div>', unsafe_allow_html=True)
+                st.markdown('<div class="avatar-bot">📚</div>', unsafe_allow_html=True)
             with col2:
                 st.markdown(f'<div class="bubble-bot">{msg["texto"]}</div>', unsafe_allow_html=True)
         else:
@@ -902,12 +915,12 @@ def mostrar_chat():
     
     # Preguntas sugeridas
     if len(st.session_state.mensajes) <= 1:
-        st.markdown("**💡 Preguntas sugeridas:**")
+        st.markdown("**💡 Preguntas frecuentes sobre tutorías:**")
         sugerencias = [
-            "¿Qué perfil tiene un ingeniero informático?",
-            "¿Qué cursos lleva la carrera?",
-            "¿Qué laboratorios tiene la escuela?",
-            "¿Hay programas de intercambio estudiantil?"
+            "¿Qué es la tutoría académica?",
+            "¿Cuáles son los tipos de tutoría?",
+            "¿Qué hacer si tengo bajo rendimiento en programación?",
+            "¿Cómo solicitar cambio de tutor?"
         ]
         cols = st.columns(len(sugerencias))
         for col, sug in zip(cols, sugerencias):
@@ -916,7 +929,7 @@ def mostrar_chat():
                     st.session_state.pregunta_rapida = sug
     
     # Input del chat
-    user_input = st.chat_input("Escribe tu pregunta aquí...")
+    user_input = st.chat_input("Escribe tu pregunta sobre tutorías aquí...")
     
     if st.session_state.pregunta_rapida:
         user_input = st.session_state.pregunta_rapida
@@ -934,9 +947,4 @@ def mostrar_chat():
 # CONTROL PRINCIPAL
 # ─────────────────────────────────────────────────────────────
 if "pagina" not in st.session_state:
-    st.session_state.pagina = "principal"
-
-if st.session_state.pagina == "chat":
-    mostrar_chat()
-else:
-    mostrar_pagina_principal()
+    st
