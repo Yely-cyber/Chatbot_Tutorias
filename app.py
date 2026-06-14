@@ -159,17 +159,56 @@ def saludo(sentence):
             return random.choice(SALUDOS_OUT)
 
 def respuesta_corpus(user_response, sent_tokens):
+    texto = user_response.lower().strip()
+    
+    # Extraer palabras clave significativas (ignorar artículos, preposiciones)
+    palabras_irrelevantes = {'que', 'como', 'para', 'por', 'con', 'sin', 'una', 'unas', 'los', 'las', 'el', 'la', 'de', 'y', 'a', 'es', 'son', 'en', 'del', 'al', 'mi', 'tu', 'su', 'se', 'me', 'te', 'le', 'lo', 'la', 'las', 'los'}
+    
+    palabras_clave = [p for p in texto.split() if p not in palabras_irrelevantes and len(p) > 3]
+    
+    # Buscar en el corpus oraciones que contengan muchas palabras clave
+    mejores_coincidencias = []
+    
+    for idx, sent in enumerate(sent_tokens):
+        sent_lower = sent.lower()
+        puntaje = 0
+        for palabra in palabras_clave:
+            if palabra in sent_lower:
+                # Dar más peso si la palabra aparece al inicio de la oración (posible pregunta)
+                if sent_lower.startswith(palabra):
+                    puntaje += 5
+                else:
+                    puntaje += 2
+        
+        # Bonus si la oración comienza con "¿Qué" o "¿Cómo" (formato de pregunta)
+        if sent_lower.startswith('¿qué') or sent_lower.startswith('¿cómo') or sent_lower.startswith('¿cuál'):
+            puntaje += 3
+        
+        if puntaje > 0:
+            mejores_coincidencias.append((puntaje, idx, sent))
+    
+    # Ordenar por puntaje
+    mejores_coincidencias.sort(reverse=True)
+    
+    if mejores_coincidencias and mejores_coincidencias[0][0] >= 2:
+        return mejores_coincidencias[0][2]
+    
+    # Si no hay buenas coincidencias, usar TF-IDF
     tokens_temp = sent_tokens.copy()
     tokens_temp.append(user_response)
     vec = TfidfVectorizer(tokenizer=lem_normalize, stop_words=stopwords.words('spanish'))
     tfidf = vec.fit_transform(tokens_temp)
     vals = cosine_similarity(tfidf[-1], tfidf)
-    idx  = vals.argsort()[0][-2]
-    flat = vals.flatten()
-    flat.sort()
-    if flat[-2] == 0:
-        return "Lo siento, no encontré información sobre ese tema de tutorías. Te recomiendo consultar con la coordinación académica."
-    return tokens_temp[idx]
+    vals = vals.flatten()
+    
+    mejores_indices = vals.argsort()[-3:][::-1]
+    mejor_similitud = vals[mejores_indices[0]] if len(mejores_indices) > 0 else 0
+    
+    if mejor_similitud > 0.15:
+        return sent_tokens[mejores_indices[0]]
+    
+    # Respuesta útil por defecto
+    return "No encontré información específica sobre esa consulta. Te recomiendo reformular tu pregunta. Por ejemplo, puedes preguntar: '¿Qué son las tutorías?', '¿Cómo me inscribo en una tutoría?', '¿Qué es la técnica Pomodoro?' o '¿Cómo cuidar mi salud mental?'" 
 
 def obtener_respuesta(user_input, sent_tokens):
     texto = user_input.lower().strip()
