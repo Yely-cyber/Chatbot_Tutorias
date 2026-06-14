@@ -166,6 +166,10 @@ def respuesta_corpus(user_response, sent_tokens):
     
     palabras_clave = [p for p in texto.split() if p not in palabras_irrelevantes and len(p) > 3]
     
+    # Si no hay palabras clave, usar las primeras palabras significativas
+    if not palabras_clave:
+        palabras_clave = [p for p in texto.split() if len(p) > 2][:3]
+    
     # Buscar en el corpus oraciones que contengan muchas palabras clave
     mejores_coincidencias = []
     
@@ -174,16 +178,20 @@ def respuesta_corpus(user_response, sent_tokens):
         puntaje = 0
         for palabra in palabras_clave:
             if palabra in sent_lower:
-                # Dar más peso si la palabra aparece al inicio de la oración (posible pregunta)
+                # Dar más peso si la palabra aparece al inicio de la oración
                 if sent_lower.startswith(palabra):
                     puntaje += 5
                 else:
                     puntaje += 2
         
         # Bonus si la oración comienza con "¿Qué" o "¿Cómo" (formato de pregunta)
-        if sent_lower.startswith('¿qué') or sent_lower.startswith('¿cómo') or sent_lower.startswith('¿cuál'):
+        if sent_lower.startswith('¿qué') or sent_lower.startswith('¿cómo') or sent_lower.startswith('¿cuál') or sent_lower.startswith('¿cuáles'):
             puntaje += 3
         
+        # Bonus si la oración contiene la palabra "tutoría" o "tutorías"
+        if 'tutoría' in sent_lower or 'tutorías' in sent_lower:
+            puntaje += 1
+            
         if puntaje > 0:
             mejores_coincidencias.append((puntaje, idx, sent))
     
@@ -194,21 +202,41 @@ def respuesta_corpus(user_response, sent_tokens):
         return mejores_coincidencias[0][2]
     
     # Si no hay buenas coincidencias, usar TF-IDF
-    tokens_temp = sent_tokens.copy()
-    tokens_temp.append(user_response)
-    vec = TfidfVectorizer(tokenizer=lem_normalize, stop_words=stopwords.words('spanish'))
-    tfidf = vec.fit_transform(tokens_temp)
-    vals = cosine_similarity(tfidf[-1], tfidf)
-    vals = vals.flatten()
+    if len(sent_tokens) > 1:
+        tokens_temp = sent_tokens.copy()
+        tokens_temp.append(user_response)
+        
+        # Manejar caso de tokens vacíos
+        try:
+            vec = TfidfVectorizer(tokenizer=lem_normalize, stop_words=stopwords.words('spanish'))
+            tfidf = vec.fit_transform(tokens_temp)
+            vals = cosine_similarity(tfidf[-1], tfidf)
+            vals = vals.flatten()
+            
+            # Obtener los mejores índices, excluyendo el último que es la consulta misma
+            if len(vals) >= 2:
+                # Excluir el último índice (la consulta)
+                indices_validos = list(range(len(vals) - 1))
+                if indices_validos:
+                    # Ordenar y obtener el mejor
+                    mejores_indices = sorted(indices_validos, key=lambda i: vals[i], reverse=True)
+                    mejor_idx = mejores_indices[0] if mejores_indices else None
+                    
+                    if mejor_idx is not None and vals[mejor_idx] > 0.1:
+                        return sent_tokens[mejor_idx]
+        except Exception as e:
+            # Si hay error en TF-IDF, continuar con la búsqueda por defecto
+            pass
     
-    mejores_indices = vals.argsort()[-3:][::-1]
-    mejor_similitud = vals[mejores_indices[0]] if len(mejores_indices) > 0 else 0
+    # Búsqueda por defecto: encontrar la oración más relevante por palabras sueltas
+    for palabra in palabras_clave:
+        for idx, sent in enumerate(sent_tokens):
+            if palabra in sent.lower():
+                return sent
     
-    if mejor_similitud > 0.15:
-        return sent_tokens[mejores_indices[0]]
-    
-    # Respuesta útil por defecto
-    return "No encontré información específica sobre esa consulta. Te recomiendo reformular tu pregunta. Por ejemplo, puedes preguntar: '¿Qué son las tutorías?', '¿Cómo me inscribo en una tutoría?', '¿Qué es la técnica Pomodoro?' o '¿Cómo cuidar mi salud mental?'" 
+    # Respuesta útil por defecto si todo falla
+    temas_disponibles = "¿Qué son las tutorías?, ¿Tipos de tutoría?, ¿Cómo cuidar mi salud mental?, ¿Técnicas de estudio?, ¿Cómo organizar mi tiempo?"
+    return f"No encontré información específica sobre '{user_response}'. Te recomiendo reformular tu pregunta. Por ejemplo, puedes preguntar: {temas_disponibles}" 
 
 def obtener_respuesta(user_input, sent_tokens):
     texto = user_input.lower().strip()
