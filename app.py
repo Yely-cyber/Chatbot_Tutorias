@@ -129,7 +129,12 @@ footer {visibility: hidden;}
     margin: 5px 0 0;
 }
 
-/* Botón del Chatbot en el Header */
+/* Botón del Chatbot en el Header - ESTÁTICO EN ESQUINA SUPERIOR DERECHA */
+.chatbot-header-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .chatbot-header-btn {
     background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
     border: none;
@@ -507,16 +512,17 @@ footer {visibility: hidden;}
 }
 
 /* Botones de sugerencias */
-.suggestion-btn {
+.stButton button {
     background: white !important;
     border: 1px solid #E0E0E0 !important;
     border-radius: 25px !important;
     padding: 8px 16px !important;
     font-size: 12px !important;
     transition: all 0.3s !important;
+    color: #333 !important;
 }
 
-.suggestion-btn:hover {
+.stButton button:hover {
     background: #DAA520 !important;
     border-color: #DAA520 !important;
     color: #8B0000 !important;
@@ -658,7 +664,7 @@ def mostrar_pagina_principal():
     </div>
     """, unsafe_allow_html=True)
     
-    # Header principal
+    # Header principal con el botón del chatbot estático en la esquina superior derecha
     st.markdown("""
     <div class="main-header">
         <div class="logo-area">
@@ -668,8 +674,27 @@ def mostrar_pagina_principal():
                 <p>UNSAAC - Universidad Nacional de San Antonio Abad del Cusco</p>
             </div>
         </div>
+        <div class="chatbot-header-wrapper">
+            <button class="chatbot-header-btn" id="chatbotBtn">
+                💬 Asistente Virtual
+            </button>
+        </div>
     </div>
+    
+    <script>
+    document.getElementById('chatbotBtn').addEventListener('click', function() {
+        const streamlitButton = window.parent.document.querySelector('button[key="header_chat_btn"]');
+        if (streamlitButton) {
+            streamlitButton.click();
+        }
+    });
+    </script>
     """, unsafe_allow_html=True)
+    
+    # Botón oculto de Streamlit para el chatbot (funcional)
+    if st.button("", key="header_chat_btn", help="Abrir asistente virtual"):
+        st.session_state.pagina = "chat"
+        st.rerun()
     
     # Navegación
     st.markdown("""
@@ -796,49 +821,6 @@ def mostrar_pagina_principal():
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
-    # Botón flotante del chatbot (ahora funcionando correctamente)
-    st.markdown("""
-    <style>
-    .chatbot-fab {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 9999;
-    }
-    .chatbot-fab button {
-        background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-        border: none;
-        border-radius: 50px;
-        padding: 14px 28px;
-        color: #8B0000;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 15px;
-        cursor: pointer;
-        transition: all 0.3s;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: 0 4px 20px rgba(139,0,0,0.3);
-    }
-    .chatbot-fab button:hover {
-        transform: scale(1.05);
-        background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
-        box-shadow: 0 6px 25px rgba(139,0,0,0.4);
-    }
-    </style>
-    <div class="chatbot-fab">
-        <button onclick="window.parent.document.querySelector('button[key=\\'fab_chat_btn\\']').click()">
-            💬 Asistente Virtual
-        </button>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Botón oculto para Streamlit
-    if st.button("", key="fab_chat_btn", help="Abrir asistente virtual"):
-        st.session_state.pagina = "chat"
-        st.rerun()
 
 # ─────────────────────────────────────────────────────────────
 # FUNCIÓN PARA MOSTRAR EL CHAT MODERNO
