@@ -1,179 +1,159 @@
 La tutoría académica en la Escuela Profesional de Ingeniería Informática y de Sistemas de la UNSAAC es un proceso de acompañamiento permanente que se brinda a los estudiantes durante toda su formación universitaria. Su finalidad es orientar, apoyar y hacer seguimiento al estudiante para mejorar su rendimiento académico, fortalecer su formación integral y ayudarlo a culminar satisfactoriamente su carrera profesional.
-
-Este proceso no solo se enfoca en las notas o en los cursos de programación, bases de datos o redes, sino también en los aspectos personales, sociales y profesionales que pueden influir en el aprendizaje del estudiante. Por eso, la tutoría es importante dentro de la vida universitaria, ya que permite detectar dificultades a tiempo y brindar el apoyo necesario.
-
-Dentro de nuestra Escuela Profesional de Ingeniería Informática y de Sistemas, el proceso de tutoría se organiza en tres tipos específicos de acompañamiento, según la necesidad del estudiante:
-
-La tutoría académica se enfoca directamente en el rendimiento en los cursos de la carrera. Por ejemplo, si tienes dificultades con Algoritmos, Estructura de Datos o Ingeniería de Software, el tutor te orientará sobre métodos de estudio, organización del tiempo para programar, y estrategias para aprobar los laboratorios y exámenes.
-
-La tutoría personal aborda aspectos personales que puedan afectar tu vida universitaria: responsabilidad, autoestima, manejo del estrés por carga de trabajos, comunicación con compañeros de equipo, o problemas familiares. El tutor te escucha y, si es necesario, te deriva a Bienestar Universitario.
-
-La tutoría profesional te orienta sobre tu futuro como ingeniero informático. Te ayuda a reconocer tus habilidades (por ejemplo, si eres más hábil para desarrollo web, bases de datos o ciberseguridad), a elaborar tu CV, a prepararte para entrevistas, y a vincular tu rendimiento académico con las demandas del mercado laboral.
-
-Estos tres tipos de tutoría no son excluyentes; un estudiante puede recibir los tres simultáneamente según sus necesidades.
-
-El Reglamento de Tutoría Académica de la UNSAAC regula la actividad tutorial, y nuestra Escuela de Ingeniería Informática y de Sistemas lo aplica con sus propias adaptaciones. Su base legal se encuentra en la Ley Universitaria N.° 30220 y en el Estatuto de la UNSAAC. Además, el reglamento establece que todo estudiante con matrícula condicionada debe contar obligatoriamente con un tutor académico. En nuestra Escuela, esto es especialmente importante porque los cursos tienen alto componente práctico y el rezago es muy perjudicial.
-
-Los sujetos principales del proceso tutorial son el tutor y el tutorado.
-
-El tutor es un docente de nuestra propia Escuela Profesional de Ingeniería Informática y de Sistemas, conocedor de la malla curricular, las dificultades típicas de cada curso (como Programación Orientada a Objetos, Sistemas Operativos, etc.) y el perfil profesional del ingeniero informático. Su función es apoyar la formación integral del tutorado.
-
-El tutorado eres tú, estudiante de nuestra Escuela. Debes participar de manera responsable en las reuniones tutoriales, comunicar tus dificultades (por ejemplo, que no entiendes el uso de punteros en C++ o que se te complica trabajar en equipo) y seguir las recomendaciones.
-
-La tutoría tiene un carácter permanente, personalizado y extra clase. Esto quiere decir que se realiza fuera del horario normal de clases y te acompaña desde el primer hasta el décimo semestre. Además, se desarrolla de acuerdo con tus necesidades. Por ejemplo, si estás llevando un curso pesado como Inteligencia Artificial, el tutor puede realizar un seguimiento más cercano.
-
-La confidencialidad en la tutoría significa que la información que compartes con tu tutor debe ser tratada con confidencialidad. El tutor no puede divulgar información personal o académica sin una razón justificada. Solo se puede utilizar para cumplir las funciones tutoriales o para derivarte a Bienestar Universitario (por ejemplo, si revelas un problema de salud mental o acoso).
-
-La tutoría académica se organiza internamente en nuestra Escuela. Contamos con un Comité Tutorial propio, integrado por el Decano de la Facultad (o su representante), el Director de nuestra Escuela Profesional, y un docente elegido por sus pares. Este comité organiza la tutoría, propone tutores (docentes de nuestra carrera), administra la información tutorial y evalúa los casos que requieren atención especial, como alumnos que pierden más de tres cursos en un semestre.
-
-El Comité Tutorial tiene como función principal asegurar el funcionamiento adecuado, permanente y eficaz de la tutoría dentro de nuestra Escuela. Entre sus funciones se encuentran:
-
-Organizar la actividad tutorial.
-
-Proponer tutores para los estudiantes (asignando, por ejemplo, a un docente de Sistemas Digitales para tutorar a estudiantes de primeros semestres).
-
-Administrar la información tutorial (registros de reuniones, casos especiales).
-
-Evaluar casos de estudiantes que necesitan atención especial (como riesgo de deserción).
-
-Coordinar con Bienestar Universitario cuando el estudiante requiere apoyo psicológico o económico.
-
-La actividad tutorial es supervisada por el Vicerrectorado Académico de la UNSAAC, pero nuestra Escuela envía informes periódicos. Esta autoridad puede solicitar informes, emitir directivas y dar indicaciones para mejorar el funcionamiento de las tutorías. Gracias a esta supervisión, la tutoría no queda solamente bajo responsabilidad del tutor, sino que forma parte de un sistema organizado.
-
-El tutor académico es un docente de nuestra Escuela de Ingeniería Informática y de Sistemas. Su labor no consiste solo en responder dudas sobre cómo usar un IDE o qué libro leer, sino en orientar, hacer seguimiento y ayudarte a superar dificultades académicas y personales.
-
-Las principales funciones del tutor incluyen las siguientes acciones:
-
-Realizar un diagnóstico inicial de tu situación (qué cursos llevas, cuáles son tus fortalezas en programación o matemáticas, etc.).
-
-Implementar estrategias de atención tutorial (reuniones individuales, grupos de estudio).
-
-Hacer seguimiento a tu rendimiento académico (notas parciales, asistencia a laboratorios).
-
-Verificar tu mejora durante el semestre.
-
-Elaborar y actualizar tu expediente de tutorado.
-
-Informar al Director de nuestra Escuela sobre los resultados del seguimiento.
-
-Derivarte a Bienestar Universitario si necesitas atención especializada (por ejemplo, si presentas síntomas de ansiedad severa antes de un examen).
-
-El expediente del tutorado es un registro donde se guarda la información relacionada con tu proceso de tutoría: diagnóstico inicial, reuniones realizadas, dificultades encontradas, acciones tomadas y resultados. Este expediente permite que el seguimiento sea ordenado.
-
-La derivación a Bienestar Universitario se realiza cuando el tutor observa que necesitas ayuda especializada que él no puede brindar (problemas personales, emocionales, económicos, familiares, de salud o alguna discapacidad que afecte tu rendimiento). El tutor no es psicólogo ni trabajador social, pero cumple un papel importante al orientarte y derivarte.
-
-Los estudiantes de Ingeniería Informática y de Sistemas son asignados a un tutor académico desde el primer semestre hasta la culminación del plan curricular. La asignación está a cargo de la Dirección de nuestra Escuela. Cada docente recibe un número determinado de tutorados, de acuerdo con su dedicación.
-
-El reglamento establece que, en lo posible, cada tutor no debe tener más de veinticinco estudiantes tutorados. Esto permite un acompañamiento personalizado. En nuestra Escuela, dado que somos muchos estudiantes, este número puede variar, pero se procura que no sea excesivo.
-
-El cambio de tutor se puede solicitar cuando tengas una razón justificada (por ejemplo, incompatibilidad de horarios o que el tutor no es de tu área de interés). Debes presentar una solicitud al Comité Tutorial de nuestra Escuela. El Comité evalúa el caso y toma una decisión.
-
-Las tutorías académicas se desarrollan mediante entrevistas programadas, reuniones grupales, revisión de avances de proyectos, etc. La frecuencia la determina el Comité Tutorial de nuestra Escuela, según la necesidad del estudiante. Por ejemplo, si estás en riesgo académico, puedes solicitar reunirte con tu tutor, para alguna duda u orientación que necesites.
-
-La asistencia a las tutorías es importante porque permite recibir orientación a tiempo. Si faltas constantemente a clases o no asistes a tutorías, el tutor puede contactarte para conocer las razones. Es especialmente importante si tienes bajo rendimiento, matrícula condicionada o dificultades de adaptación a la vida universitaria.
-
-La matrícula condicionada es una situación en la que necesitas seguimiento especial debido a dificultades en tu rendimiento (por ejemplo, desaprobar más del 50% de tus cursos). En estos casos, el reglamento establece que la asignación de un tutor es obligatoria. No es un castigo, sino un apoyo para que puedas mejorar.
-
-Un estudiante está en riesgo académico cuando desaprueba varios cursos (por ejemplo, tres o más), tiene bajo promedio, falta frecuentemente a clases o no se adapta al ritmo de la carrera. El tutor puede recomendar organizar mejor el tiempo, asistir a clases de reforzamiento en el Centro de Cómputo, pedir apoyo a docentes, formar grupos de estudio, etc.
-
-El rendimiento académico puede mejorarse primero identificando las causas (falta de estudio, problemas personales, dificultad con la programación, etc.). Luego aplicar medidas concretas: mejorar hábitos de estudio, cumplir con las entregas de laboratorio, asistir a tutorías de curso (si las hay) y mantener comunicación constante con el tutor. Si el problema es personal o económico, el tutor te derivará a Bienestar Universitario.
-
-Si estás desaprobando Programación II y Estructuras de Datos, debes acudir a tu tutor. Él revisará tu situación, identificará si la causa es falta de práctica, problemas con la lógica o mala organización del tiempo. Te recomendará organizar horas diarias de programación, usar plataformas como HackerRank o Codecademy, y coordinar con el docente del curso. Si es necesario, te sugerirá cambiar tu método de estudio (por ejemplo, usar la técnica Pomodoro).
-
-Si tienes problemas personales, como ansiedad o problemas familiares, que afectan tu rendimiento en los laboratorios, debes conversar con tu tutor con confianza. Él te escuchará, mantendrá la confidencialidad y, si el caso requiere atención especializada, te derivará a Bienestar Universitario para apoyo psicológico. Mientras tanto, puede recomendarte reducir tu carga académica o solicitar una reprogramación de entregas.
-
-Si quieres cambiar de tutor porque el actual no conoce tu rama de interés, por ejemplo, porque buscas orientación en ciberseguridad y él se especializa en software, debes presentar una solicitud de cambio al Comité Tutorial de nuestra Escuela. El Comité evaluará y te asignará un tutor afín a tu interés, si es posible.
-
-Si estás pensando en abandonar la carrera porque la programación se te hace muy difícil, no debes tomar una decisión apresurada. Conversa primero con tu tutor. Muchas veces esa sensación se debe a una mala base, falta de práctica o comparación con compañeros. El tutor puede orientarte hacia cursos de nivelación, grupos de estudio o incluso sugerirte cambiar de especialidad dentro de la misma Escuela (por ejemplo, pasar de Ingeniería de Sistemas a una rama más teórica). También puede derivarte a Bienestar Universitario si hay un componente emocional.
-
-Las técnicas de estudio son métodos que ayudan a aprender y organizar mejor la información. Las más útiles para nuestra carrera son las siguientes:
-
-La técnica del Pomodoro consiste en estudiar durante 25 minutos, seguidos de 5 de descanso. Después de 4 bloques, descanso largo. Es ideal para depurar código o estudiar algoritmos, porque evita la fatiga mental.
-
-Video recomendado para la técnica: https://youtu.be/3D0-l2O5k8Y?si=tPZbf7sGkTd4tJ3_
-
-La técnica de Cornell para apuntes de clases teóricas es útil para cursos como Ingeniería de Software o Sistemas Operativos. Divide tu hoja en apuntes principales, palabras clave y resumen. Te ayuda a memorizar conceptos.
-
-Video recomendado para la técnica: https://youtu.be/nrcGO_0l2JQ?si=jgh403PjVKa19zDk
-
-Los mapas mentales permiten representar gráficamente conceptos como las capas del modelo OSI o la jerarquía de memoria. Usa herramientas como Mindmeister o XMind.
-
-Video recomendado para esta técnica: https://youtu.be/fkyKsL1oLsQ?si=jIR10sab6hOkART8
-
-La mnemotecnia para recordar comandos o fórmulas consiste en asociar una imagen o frase con una secuencia. Por ejemplo, para recordar los pasos de un SELECT en SQL: "SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY".
-
-Video recomendado para la técnica: https://youtu.be/04rqVgK5_tA?si=b_ni6rg2mGCUgAEq
-
-Explicar el tema para dominarlo consiste en tratar de explicarle a un compañero cómo funciona un algoritmo de ordenamiento o una consulta SQL. Si logras hacerlo con tus palabras, realmente lo has aprendido.
-
-Las fichas de estudio o flashcards para lenguajes de programación permiten crear fichas con preguntas como "¿Qué hace la función map() en Python?" y la respuesta al reverso. Usa aplicaciones como Anki o Flashcards World.
-
-Video recomendado para está técnica: https://youtu.be/5VucXcIQXxo?si=AmfzMFPFUkWMH65T
-
-Los grupos de estudio para proyectos grandes permiten formar un equipo para preparar un proyecto de Ingeniería de Software o una práctica calificada. Usen Trello o Notion para organizar tareas y Google Calendar para reuniones.
-
-Los podcasts para estar al día permiten escuchar podcasts sobre tecnología e informática mientras viajas. Por ejemplo, "Turing Podcast" o "Programar es una mierda" (en español). También en YouTube hay canales como "HolaMundo" o "MoureDev".
-
-Los cuadros comparativos para elegir tecnologías permiten visualizar ventajas y desventajas al comparar bases de datos SQL vs NoSQL o frameworks web como React vs Angular.
-
-Video recomendado para esta técnica: https://youtu.be/94nISi7DYNU?si=creweAWH_-CASzvg
-
-La gestión del tiempo ayuda a evitar la procrastinación, especialmente porque ser estudiante de informática implica pasar muchas horas frente a la computadora. Para gestionarlo mejor, aplica estas estrategias:
-
-Crear un horario que incluya clases, laboratorios, estudio individual y proyectos.
-
-Enfocarte en una sola tarea (no abras el navegador con redes sociales mientras programas).
-
-Dividir proyectos grandes (por ejemplo, un sistema web) en tareas pequeñas: diseñar BD, crear backend, maquetar frontend, probar.
-
-Empezar con lo más sencillo (corregir un error menor) para ganar impulso.
-
-Dormir al menos 7 horas. Programar con sueño lleva a más errores.
-
-Eliminar distracciones: usa bloqueadores de sitios web como Cold Turkey o Forest.
-
-Tomar descansos para estirar el cuerpo y descansar la vista (regla 20-20-20: cada 20 minutos mirar a 20 pies por 20 segundos).
-
-Participar en la inducción que organiza la universidad para todas las carreras. Allí conocerás cómo funciona el sistema de la universidad, qué oportunidades puedes tener a lo largo de tu carrera y qué entidades pueden apoyarte.
-
-Conocer los servicios: Biblioteca de la Escuela Bienestar Universitario (comedor, becas), grupos de estudio.
-
-Organizar un horario que equilibre clases, estudio en casa y ocio. Dedica al menos 2 horas diarias para practicar.
-
-Los créditos académicos representan la carga de trabajo. Por ejemplo, un curso de 4 créditos suele tener 5 horas de clase a la semana y requerir 8 horas de estudio o práctica semanal. En nuestra carrera, los cursos con laboratorio suelen demandar más tiempo extra.
-
-Crea hábitos de estudio: Práctica todos los días a la misma hora, aunque sea 1 hora.
-
-Participa activamente en clases, pregunta, forma grupos de estudio.
-
-Busca apoyo temprano: si ves que no entiendes un tema, acude al tutor o a las "horas de consulta" del profesor. No esperes a fin de ciclo.
-
-Bienestar Universitario es el área de la UNSAAC que brinda apoyo psicológico, social y de salud. En nuestra Escuela, puedes acceder a través del tutor o directamente.
-
-Atención psicológica: para manejar estrés, ansiedad (muy común antes de exposiciones o entregas de proyectos), depresión.
-
-Asistencia social: orientación económica, becas, comedor.
-
-Programas de salud: campañas de prevención.
-
-Actividades deportivas y culturales: torneos internos, talleres de danza, etc.
-
-Organiza tu tiempo (no dejes todo para la semana de exámenes).
-
-Duerme bien (evita trasnochar programando).
-
-Haz ejercicio (aunque sea caminar 20 minutos).
-
-Si el estrés es muy alto, pide cita al psicólogo a través de tu tutor.
-
-La ansiedad antes de un examen de programación puede manejarse mediante las siguientes acciones:
-
-Practica la respiración profunda (inhalar 4s, retener 4s, exhalar 4s).
-
-Estudia con anticipación; no estudies toda la noche antes.
-
-El día del examen, llega temprano al laboratorio y evita conversaciones nerviosas con compañeros.
-
-La matrícula académica se realiza siguiendo el cronograma oficial que publica la Dirección de Escuela. La matrícula es en línea a través del sistema de la universidad. Debes tener pagados los derechos y cumplir con los prerrequisitos de cada curso (por ejemplo, no puedes llevar Algoritmos y Estructuras de Datos sin haber aprobado Metodología de la Programación).
-
-El retiro de asignatura es un procedimiento mediante el cual dejas de cursar una asignatura (por ejemplo, Bases de Datos II) dentro de los plazos establecidos en el calendario de nuestra Escuela. El retiro no afecta tu promedio, pero ese curso lo tendrás que llevar después. No confundas con abandonar el curso sin retirarlo, lo cual genera nota desaprobatoria y baja el promedio.
+La tutoría académica no solo se enfoca en las notas o en los cursos de programación, bases de datos o redes, sino también en los aspectos personales, sociales y profesionales que pueden influir en el aprendizaje del estudiante. Por eso, la tutoría es importante dentro de la vida universitaria, ya que permite detectar dificultades a tiempo y brindar el apoyo necesario.
+El proceso de tutoría en la Escuela Profesional de Ingeniería Informática y de Sistemas se organiza en tres tipos específicos de acompañamiento, de acuerdo con las necesidades del estudiante: tutoría académica, tutoría personal y tutoría profesional.
+La tutoría académica se enfoca directamente en el rendimiento del estudiante en los cursos de la carrera. Por ejemplo, si tienes dificultades con Algoritmos, Estructuras de Datos o Ingeniería de Software, el tutor te orientará sobre métodos de estudio, organización del tiempo para programar y estrategias para aprobar los laboratorios y exámenes.
+La tutoría personal aborda los aspectos personales que pueden afectar la vida universitaria del estudiante, como la responsabilidad, la autoestima, el manejo del estrés por la carga de trabajos, la comunicación con los compañeros de equipo o los problemas familiares. El tutor escucha al estudiante y, si es necesario, lo deriva a Bienestar Universitario.
+La tutoría profesional orienta al estudiante sobre su futuro como ingeniero informático. Ayuda a reconocer sus habilidades, por ejemplo, si es más hábil para el desarrollo web, las bases de datos o la ciberseguridad. También lo ayuda a elaborar su currículum vitae, prepararse para entrevistas y relacionar su rendimiento académico con las demandas del mercado laboral.
+Los tres tipos de tutoría no son excluyentes, debido a que un estudiante puede recibir tutoría académica, personal y profesional simultáneamente, según sus necesidades.
+El Reglamento de Tutoría Académica de la UNSAAC regula la actividad tutorial, y la Escuela Profesional de Ingeniería Informática y de Sistemas lo aplica con sus propias adaptaciones. Su base legal se encuentra en la Ley Universitaria N.° 30220 y en el Estatuto de la UNSAAC.
+El Reglamento de Tutoría Académica establece que todo estudiante con matrícula condicionada debe contar obligatoriamente con un tutor académico. En la Escuela Profesional de Ingeniería Informática y de Sistemas, esto es especialmente importante porque los cursos tienen un alto componente práctico y el rezago académico puede ser muy perjudicial.
+En el proceso tutorial participan principalmente dos sujetos: el tutor y el tutorado.
+El tutor es un docente de la Escuela Profesional de Ingeniería Informática y de Sistemas que conoce la malla curricular, las dificultades frecuentes de cursos como Programación Orientada a Objetos o Sistemas Operativos y el perfil profesional del ingeniero informático. Su función es apoyar la formación integral del estudiante tutorado.
+El tutorado es el estudiante de la Escuela Profesional de Ingeniería Informática y de Sistemas que recibe el acompañamiento tutorial. El tutorado debe participar responsablemente en las reuniones tutoriales, comunicar sus dificultades, por ejemplo, si no comprende el uso de punteros en C++ o si tiene problemas para trabajar en equipo, y seguir las recomendaciones de su tutor.
+La tutoría tiene un carácter permanente, personalizado y extra clase. Esto significa que se realiza fuera del horario normal de clases y acompaña al estudiante desde el primer hasta el décimo semestre.
+La tutoría se desarrolla de acuerdo con las necesidades particulares de cada estudiante. Por ejemplo, si el estudiante está llevando un curso exigente como Inteligencia Artificial, el tutor puede realizar un seguimiento más cercano.
+La información que el estudiante comparte con su tutor debe ser tratada con confidencialidad. El tutor no puede divulgar información personal o académica sin una razón justificada.
+La información tutorial solamente puede utilizarse para cumplir las funciones de tutoría o para derivar al estudiante a Bienestar Universitario, por ejemplo, cuando revela un problema de salud mental o una situación de acoso.
+La organización del sistema tutorial se realiza internamente en la Escuela Profesional de Ingeniería Informática y de Sistemas.
+El Comité Tutorial de la Escuela Profesional de Ingeniería Informática y de Sistemas está integrado por el decano de la Facultad o su representante, el director de la Escuela Profesional y un docente elegido por sus pares.
+El Comité Tutorial organiza la tutoría, propone a los docentes que cumplirán la función de tutores, administra la información tutorial y evalúa los casos que requieren atención especial, como los estudiantes que desaprueban más de tres cursos durante un semestre.
+La función principal del Comité Tutorial es asegurar el funcionamiento adecuado, permanente y eficaz de la tutoría dentro de la Escuela Profesional de Ingeniería Informática y de Sistemas.
+El Comité Tutorial organiza la actividad tutorial dentro de la Escuela Profesional.
+El Comité Tutorial propone a los docentes que serán asignados como tutores de los estudiantes. Por ejemplo, puede asignar a un docente de Sistemas Digitales para que acompañe a estudiantes de los primeros semestres.
+El Comité Tutorial administra la información relacionada con la tutoría, como los registros de las reuniones y los casos especiales.
+El Comité Tutorial evalúa los casos de los estudiantes que necesitan atención especial, como aquellos que se encuentran en riesgo de deserción universitaria.
+El Comité Tutorial coordina con Bienestar Universitario cuando el estudiante necesita apoyo psicológico, social o económico.
+La actividad tutorial es supervisada por el Vicerrectorado Académico de la UNSAAC, mientras que la Escuela Profesional de Ingeniería Informática y de Sistemas envía informes periódicos sobre el desarrollo de las tutorías.
+El Vicerrectorado Académico puede solicitar informes, emitir directivas y brindar indicaciones para mejorar el funcionamiento de las tutorías.
+La supervisión del Vicerrectorado Académico permite que la tutoría no quede solamente bajo la responsabilidad del tutor, sino que forme parte de un sistema institucional organizado.
+El tutor académico es un docente de la Escuela Profesional de Ingeniería Informática y de Sistemas encargado de orientar, acompañar y realizar el seguimiento del estudiante.
+La labor del tutor académico no consiste únicamente en responder dudas sobre cómo utilizar un entorno de desarrollo integrado o IDE, ni en recomendar libros. Su labor también consiste en orientar al estudiante, hacer seguimiento de su progreso y ayudarlo a superar dificultades académicas y personales.
+Una de las funciones del tutor académico es realizar un diagnóstico inicial de la situación del estudiante, considerando los cursos que lleva y sus fortalezas en áreas como programación o matemáticas.
+Otra función del tutor académico es implementar estrategias de atención tutorial, como reuniones individuales o grupos de estudio.
+El tutor académico realiza el seguimiento del rendimiento académico del estudiante mediante la revisión de sus notas parciales y su asistencia a los laboratorios.
+El tutor académico verifica la mejora del estudiante durante el semestre.
+El tutor académico elabora y actualiza el expediente del estudiante tutorado.
+El tutor académico informa al director de la Escuela Profesional sobre los resultados del seguimiento realizado.
+El tutor académico deriva al estudiante a Bienestar Universitario cuando necesita atención especializada, por ejemplo, cuando presenta síntomas de ansiedad severa antes de un examen.
+El expediente del tutorado es un registro en el que se guarda toda la información relacionada con el proceso de tutoría del estudiante. Incluye el diagnóstico inicial, las reuniones realizadas, las dificultades encontradas, las acciones tomadas y los resultados obtenidos.
+El expediente del tutorado permite que el seguimiento del estudiante se realice de manera ordenada.
+La derivación a Bienestar Universitario se realiza cuando el tutor observa que el estudiante necesita una ayuda especializada que él no puede brindar, como atención por problemas personales, emocionales, económicos, familiares, de salud o por alguna discapacidad que afecta su rendimiento.
+El tutor académico no es psicólogo ni trabajador social, pero cumple una función importante al orientar al estudiante y derivarlo al servicio especializado correspondiente.
+La asignación de tutores en la Escuela Profesional de Ingeniería Informática y de Sistemas se realiza desde el primer semestre del estudiante hasta la culminación de su plan curricular.
+La Dirección de la Escuela Profesional es la encargada de asignar a cada estudiante un tutor académico.
+Cada docente recibe un número determinado de estudiantes tutorados de acuerdo con su dedicación académica.
+El Reglamento de Tutoría establece que, en lo posible, cada tutor no debe tener más de veinticinco estudiantes tutorados.
+El límite de veinticinco estudiantes por tutor permite brindar un acompañamiento más personalizado.
+En la Escuela Profesional de Ingeniería Informática y de Sistemas, el número de tutorados puede variar debido a la cantidad de estudiantes, pero se procura que no sea excesivo.
+El estudiante puede solicitar el cambio de tutor cuando tiene una razón justificada, como la incompatibilidad de horarios o el hecho de que el tutor no pertenezca a su área profesional de interés.
+Para solicitar el cambio de tutor, el estudiante debe presentar una solicitud al Comité Tutorial de la Escuela Profesional.
+El Comité Tutorial evalúa la solicitud de cambio de tutor y toma una decisión de acuerdo con la justificación presentada.
+Las tutorías académicas se desarrollan mediante entrevistas programadas, reuniones grupales, revisión de avances de proyectos y otras actividades de acompañamiento.
+La frecuencia de las reuniones tutoriales es determinada por el Comité Tutorial de la Escuela Profesional de acuerdo con las necesidades del estudiante.
+Un estudiante que se encuentra en riesgo académico puede solicitar una reunión con su tutor cuando tenga alguna duda o necesite orientación.
+La asistencia a las tutorías académicas es importante porque permite que el estudiante reciba orientación a tiempo.
+Cuando un estudiante falta constantemente a clases o no asiste a las tutorías, el tutor puede contactarlo para conocer las razones de sus ausencias.
+La participación en las tutorías es especialmente importante cuando el estudiante tiene bajo rendimiento académico, matrícula condicionada o dificultades para adaptarse a la vida universitaria.
+La matrícula condicionada es una situación en la que el estudiante necesita un seguimiento especial debido a las dificultades que presenta en su rendimiento académico, por ejemplo, cuando desaprueba más del cincuenta por ciento de sus cursos.
+En los casos de matrícula condicionada, el Reglamento de Tutoría establece que la asignación de un tutor académico es obligatoria.
+La matrícula condicionada no es un castigo, sino una medida de apoyo para que el estudiante pueda mejorar su rendimiento académico.
+Un estudiante se encuentra en riesgo académico cuando desaprueba varios cursos, por ejemplo, tres o más asignaturas, tiene un promedio bajo, falta frecuentemente a clases o no logra adaptarse al ritmo de la carrera.
+Cuando un estudiante se encuentra en riesgo académico, el tutor puede recomendarle organizar mejor su tiempo, asistir a clases de reforzamiento en el Centro de Cómputo, solicitar apoyo a los docentes o formar grupos de estudio.
+Para mejorar el rendimiento académico, primero se deben identificar las causas del problema, como la falta de estudio, los problemas personales o las dificultades con la programación.
+Después de identificar las causas del bajo rendimiento académico, el estudiante debe aplicar medidas concretas, como mejorar sus hábitos de estudio, cumplir con las entregas de laboratorio, asistir a las tutorías de los cursos y mantener una comunicación constante con su tutor.
+Cuando el problema que afecta el rendimiento académico es personal o económico, el tutor deriva al estudiante a Bienestar Universitario.
+Cuando un estudiante está desaprobando Programación II y Estructuras de Datos, debe acudir a su tutor académico.
+El tutor revisará la situación del estudiante que está desaprobando Programación II y Estructuras de Datos e identificará si la causa es la falta de práctica, los problemas con la lógica de programación o una mala organización del tiempo.
+El tutor puede recomendar al estudiante organizar horas diarias de programación, utilizar plataformas como HackerRank o Codecademy y coordinar con el docente del curso.
+Si es necesario, el tutor puede sugerir al estudiante cambiar su método de estudio, por ejemplo, aplicando la técnica Pomodoro.
+Cuando un estudiante tiene problemas personales, ansiedad o problemas familiares que afectan su rendimiento en los laboratorios, debe conversar con su tutor con confianza.
+El tutor escuchará al estudiante, mantendrá la confidencialidad de la información y, si el caso requiere atención especializada, lo derivará a Bienestar Universitario para que reciba apoyo psicológico.
+Mientras el estudiante recibe atención especializada, el tutor puede recomendarle reducir su carga académica o solicitar una reprogramación de las entregas.
+Cuando un estudiante desea cambiar de tutor porque el docente actual no conoce suficientemente su rama de interés, por ejemplo, porque desea recibir orientación sobre ciberseguridad y su tutor se especializa en software, debe presentar una solicitud al Comité Tutorial de la Escuela Profesional.
+La solicitud de cambio de tutor debe explicar la razón justificada por la cual el estudiante solicita el cambio.
+El Comité Tutorial evaluará la solicitud y, si es posible, asignará al estudiante un tutor relacionado con su área de interés.
+Cuando un estudiante está pensando en abandonar la carrera porque considera que la programación es muy difícil, no debe tomar una decisión apresurada.
+El estudiante que piensa abandonar la carrera debe conversar primero con su tutor académico.
+En muchos casos, la sensación de que la programación es demasiado difícil se debe a una mala base, la falta de práctica o la comparación constante con otros compañeros.
+El tutor puede orientar al estudiante hacia cursos de nivelación, grupos de estudio o incluso sugerirle una especialidad diferente dentro de la misma Escuela Profesional, por ejemplo, pasar de Ingeniería de Sistemas a una rama más teórica.
+El tutor también puede derivar al estudiante a Bienestar Universitario cuando existe un componente emocional que influye en su intención de abandonar la carrera.
+Las técnicas de estudio son métodos que permiten mejorar el aprendizaje, la organización y la comprensión de los contenidos académicos.
+La técnica Pomodoro consiste en estudiar durante veinticinco minutos y descansar cinco minutos. Después de completar cuatro bloques, se realiza un descanso más largo.
+La técnica Pomodoro es ideal para depurar código o estudiar algoritmos porque ayuda a evitar la fatiga mental.
+El video recomendado para aprender la técnica Pomodoro es el siguiente:
+https://youtu.be/3D0-l2O5k8Y?si=tPZbf7sGkTd4tJ3_
+La técnica de Cornell es un método útil para tomar apuntes en clases teóricas, especialmente en cursos como Ingeniería de Software o Sistemas Operativos.
+La técnica de Cornell consiste en dividir la hoja en tres partes: apuntes principales, palabras clave y resumen.
+La técnica de Cornell ayuda al estudiante a organizar y memorizar mejor los conceptos.
+El video recomendado para aprender la técnica de Cornell es el siguiente:
+https://youtu.be/nrcGO_0l2JQ?si=jgh403PjVKa19zDk
+Los mapas mentales son representaciones gráficas que permiten organizar conceptos como las capas del modelo OSI o la jerarquía de memoria.
+Para elaborar mapas mentales, se pueden utilizar herramientas como MindMeister o XMind.
+El video recomendado para aprender a elaborar mapas mentales es el siguiente:
+https://youtu.be/fkyKsL1oLsQ?si=jIR10sab6hOkART8
+La mnemotecnia es una técnica que permite recordar comandos, fórmulas o secuencias mediante la asociación con imágenes o frases.
+Un ejemplo de mnemotecnia es recordar el orden de una consulta SQL mediante la secuencia: “SELECT... FROM... WHERE... GROUP BY... HAVING... ORDER BY”.
+El video recomendado para aprender técnicas de mnemotecnia es el siguiente:
+https://youtu.be/04rqVgK5_tA?si=b_ni6rg2mGCUgAEq
+La técnica de explicar el tema consiste en intentar enseñarle a un compañero cómo funciona un algoritmo de ordenamiento o una consulta SQL.
+Cuando el estudiante logra explicar un tema utilizando sus propias palabras, demuestra que realmente lo ha comprendido.
+Las fichas de estudio o flashcards son tarjetas que contienen una pregunta en un lado y la respuesta en el reverso.
+Las fichas de estudio son útiles para aprender conceptos relacionados con los lenguajes de programación.
+Un ejemplo de pregunta para una ficha de estudio es: “¿Qué hace la función map() en Python?”.
+Para crear fichas de estudio se pueden utilizar aplicaciones como Anki o Flashcards World.
+El video recomendado para aprender a utilizar fichas de estudio es el siguiente:
+https://youtu.be/5VucXcIQXxo?si=AmfzMFPFUkWMH65T
+Los grupos de estudio permiten que varios estudiantes trabajen juntos para preparar un proyecto de Ingeniería de Software o una práctica calificada.
+Los integrantes de un grupo de estudio pueden utilizar Trello o Notion para organizar sus tareas y Google Calendar para programar sus reuniones.
+Los podcasts permiten que el estudiante se mantenga informado sobre temas relacionados con la tecnología y la informática mientras realiza otras actividades, como viajar.
+Algunos podcasts recomendados son “Turing Podcast” y “Programar es una mierda”, ambos disponibles en español.
+Algunos canales de YouTube recomendados para aprender sobre programación y tecnología son “HolaMundo” y “MoureDev”.
+Los cuadros comparativos permiten visualizar las semejanzas, diferencias, ventajas y desventajas de distintas tecnologías.
+Un cuadro comparativo puede utilizarse para comparar bases de datos SQL y NoSQL o frameworks web como React y Angular.
+El video recomendado para aprender a elaborar cuadros comparativos es el siguiente:
+https://youtu.be/94nISi7DYNU?si=creweAWH_-CASzvg
+La gestión del tiempo es importante para los estudiantes de informática debido a la gran cantidad de horas que pasan frente a la computadora.
+Una estrategia de gestión del tiempo consiste en crear un horario que incluya las clases, los laboratorios, el estudio individual y los proyectos.
+Otra estrategia de gestión del tiempo consiste en enfocarse en una sola tarea y evitar abrir redes sociales en el navegador mientras se programa.
+Los proyectos grandes, como el desarrollo de un sistema web, deben dividirse en tareas pequeñas, como diseñar la base de datos, crear el backend, maquetar el frontend y realizar las pruebas.
+Empezar por una tarea sencilla, como corregir un error menor, puede ayudar al estudiante a ganar impulso y continuar con las demás actividades.
+Dormir al menos siete horas es importante porque programar con sueño puede generar una mayor cantidad de errores.
+La eliminación de distracciones puede realizarse utilizando bloqueadores de sitios web como Cold Turkey o Forest.
+Los estudiantes deben tomar descansos para estirar el cuerpo y descansar la vista.
+La regla 20-20-20 consiste en mirar cada veinte minutos un objeto ubicado aproximadamente a veinte pies de distancia durante veinte segundos.
+La adaptación universitaria es el proceso mediante el cual el estudiante aprende a desenvolverse en la universidad, organizar sus responsabilidades y utilizar los servicios disponibles.
+Participar en la inducción organizada por la universidad permite conocer cómo funciona el sistema universitario, qué oportunidades existen durante la carrera y qué entidades pueden brindar apoyo.
+El estudiante debe conocer los servicios disponibles, como la Biblioteca de la Escuela, Bienestar Universitario, el comedor universitario, las becas y los grupos de estudio.
+El estudiante debe organizar un horario que equilibre las clases, el estudio en casa y el tiempo de ocio.
+Se recomienda que el estudiante dedique al menos dos horas diarias a la práctica.
+Los créditos académicos representan la carga de trabajo de una asignatura.
+Por ejemplo, un curso de cuatro créditos suele tener cinco horas de clase a la semana y puede requerir aproximadamente ocho horas semanales de estudio o práctica.
+En la Escuela Profesional de Ingeniería Informática y de Sistemas, los cursos que incluyen laboratorios suelen demandar una mayor cantidad de tiempo adicional.
+La creación de hábitos de estudio consiste en practicar todos los días a la misma hora, aunque sea durante una hora.
+La participación activa en clases implica preguntar, resolver dudas y formar grupos de estudio.
+La búsqueda temprana de apoyo consiste en acudir al tutor o a las horas de consulta del profesor cuando el estudiante no comprende un tema.
+El estudiante no debe esperar hasta el final del ciclo académico para solicitar ayuda.
+Bienestar Universitario es el área de la UNSAAC que brinda apoyo psicológico, social y de salud a los estudiantes.
+Los estudiantes de la Escuela Profesional de Ingeniería Informática y de Sistemas pueden acceder a Bienestar Universitario directamente o mediante la derivación realizada por su tutor académico.
+La atención psicológica de Bienestar Universitario ayuda a los estudiantes a manejar el estrés, la ansiedad y la depresión.
+La ansiedad es frecuente antes de las exposiciones, los exámenes o las entregas de proyectos.
+La asistencia social de Bienestar Universitario brinda orientación económica e información sobre becas y comedor universitario.
+Los programas de salud de Bienestar Universitario desarrollan campañas de prevención.
+Bienestar Universitario también organiza actividades deportivas y culturales, como torneos internos y talleres de danza.
+Una forma de cuidar la salud mental es organizar el tiempo y evitar dejar todas las actividades para la semana de exámenes.
+Dormir adecuadamente y evitar trasnochar programando permite cuidar la salud mental y mejorar el rendimiento académico.
+Realizar actividad física, aunque solamente sea caminar durante veinte minutos, ayuda a reducir el estrés.
+Cuando el nivel de estrés es muy alto, el estudiante debe solicitar una cita con el psicólogo directamente o mediante su tutor académico.
+Cuando un estudiante siente ansiedad antes de un examen de programación, puede practicar la respiración profunda.
+La respiración profunda puede realizarse inhalando durante cuatro segundos, reteniendo el aire durante cuatro segundos y exhalando durante cuatro segundos.
+Para reducir la ansiedad antes de un examen, el estudiante debe estudiar con anticipación y evitar estudiar durante toda la noche anterior.
+El día del examen, el estudiante debe llegar temprano al laboratorio y evitar las conversaciones nerviosas con sus compañeros.
+Los trámites académicos frecuentes son procedimientos que los estudiantes deben realizar de acuerdo con las normas y los cronogramas de la universidad.
+Para realizar la matrícula académica, el estudiante debe seguir el cronograma oficial publicado por la Dirección de la Escuela Profesional.
+La matrícula académica se realiza en línea mediante el sistema de la universidad.
+Para matricularse, el estudiante debe tener pagados los derechos correspondientes y cumplir con los prerrequisitos de cada asignatura.
+Por ejemplo, el estudiante no puede matricularse en Algoritmos y Estructuras de Datos sin haber aprobado previamente Metodología de la Programación.
+El retiro de una asignatura es el procedimiento mediante el cual el estudiante deja de cursar una materia, por ejemplo, Bases de Datos II, dentro de los plazos establecidos en el calendario de la Escuela Profesional.
+El retiro de una asignatura no afecta el promedio académico del estudiante, pero la asignatura deberá cursarse posteriormente.
+El estudiante no debe confundir el retiro de una asignatura con el abandono del curso sin realizar el trámite correspondiente.
+Abandonar una asignatura sin retirarse oficialmente genera una nota desaprobatoria y disminuye el promedio académico del estudiante.
